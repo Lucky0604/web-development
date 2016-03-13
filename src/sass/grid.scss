@@ -1,0 +1,76 @@
+body {
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+// just used to show grid columns width
+.show-grid {
+	margin-top: 25px;
+	margin-bottom: 25px;
+	overflow: hidden;
+}
+
+.show-grid span {
+	display: block;
+	background: #ccc;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	color: red;
+}
+
+// sass grid
+$grid-total-columns: 12;	// number of columns in grid
+$grid-gutter-width: 20px;	// space between columns
+$grid-margin-width: 20px;	// Outer spacing on grid
+
+@mixin container {
+	margin-left: -$grid-gutter-width;
+	padding-left: $grid-margin-width;
+	padding-right: $grid-margin-width;
+}
+
+@mixin grid-columns($grid-column-span, $grid-total-columns) {
+	width: percentage($grid-column-span / $grid-total-columns);
+}
+
+$class-grid-row: 'row';
+$class-grid-column: 'col-';
+$class-push: 'push';
+
+@mixin generate_grid_classes() {
+	.#{$class-grid-row} {
+		@include container();
+	}
+
+	[class*="#{$class-grid-column}"] {
+		position: relative;
+		min-height: 1px;
+		-mox-box-sizing: border-box;
+		box-sizing: border-box;
+		padding-left: $grid-gutter-width;
+		width: 100%;
+		float: left;
+	}
+
+	[class*="#{$class-grid-column}"]:last-child {
+		float: right;
+	}
+}
+
+@mixin generate_grid_column_classes() {
+	@for $i from 1 through $grid-total-columns {
+		.#{$class-grid-column}#{$i} {
+			@include grid-columns($i, $grid-total-columns);
+		}
+	}
+}
+
+@include generate_grid_classes();
+@include generate_grid_column_classes();
+
+@media screen and (min-width: 600px) {
+	$class-grid-column: 'col-s-';
+	@include generate_grid_column_classes();
+}
