@@ -157,7 +157,7 @@ module.exports = function() {
       // server port
       port: 8080
     }
-  },
+  };
 
   if (isProd) {
     config.plugins.push(
