@@ -5,5 +5,8 @@ export default function routing($routeProvider, $locationProvider) {
     .when('/', {
       template: '<home></home>'
     })
+    .when('/about', {
+      template: '<about></about>'
+    })
     .otherwise('/');
 }
