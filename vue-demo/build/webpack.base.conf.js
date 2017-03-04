@@ -21,7 +21,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.vue'],
-    fallback: [path.join(__dirname, '../node_modules')],
     alias: {
       // 自定义路径别名
       MOCK: PATHS.MOCK,
