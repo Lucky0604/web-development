@@ -3,7 +3,7 @@
  */
 
 // 后端API根路径
-export const rootPath = '/api';
+export const rootPath = '/api'
 
 // XHR错误处理
 export const errHandler = (e) => {
@@ -11,6 +11,6 @@ export const errHandler = (e) => {
     heading: '请求API失败',
     icon: 'error',
     stack: false
-  });
-  console.warn(e);
+  })
+  console.warn(e)
 }

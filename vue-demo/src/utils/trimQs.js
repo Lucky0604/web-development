@@ -5,7 +5,7 @@
  * @return {String}
  */
 export default function trimQs(url) {
-  return url ? url.split('?')[0]: ''
+  return url ? url.split('?')[0] : ''
 }
 
 /**

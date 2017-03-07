@@ -16,24 +16,24 @@
 </template>
 
 <script>
-import authService from 'SERVICE/authService';
+import authService from 'SERVICE/authService'
 export default {
   data: () => ({username: ''}),
   methods: {
     handleSubmit () {
-      let username = $.trim(this.username);
+      let username = $.trim(this.username)
       if (!username) return $.toast({
         heading: '用户名为空',
         icon: 'warning',
         stack: false
-      });
+      })
       authService
         .login({username})
         .then(userData => {
-          this.$root.userData = userData;     // 写session
-          let {referrer} = this.$route.query;
-          referrer = referrer ? decodeURIComponent(referrer): '/';
-          this.$router.replace({path: referrer, force: true});
+          this.$root.userData = userData     // 写session
+          let {referrer} = this.$route.query
+          referrer = referrer ? decodeURIComponent(referrer) : '/'
+          this.$router.replace({path: referrer, force: true})
         })
     }
   }

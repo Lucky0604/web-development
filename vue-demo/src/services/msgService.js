@@ -1,4 +1,4 @@
-import xhr from './xhr/';
+import xhr from './xhr/'
 
 /**
  * 留言板所用到的API

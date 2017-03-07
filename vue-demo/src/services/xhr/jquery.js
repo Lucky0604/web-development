@@ -1,8 +1,8 @@
-import {rootPath, errHandler} from './config';
+import {rootPath, errHandler} from './config'
 
 const xhr = ({method = 'get', url, body = null}) => {
   // 由于引入了es6-shim，这里可以使用原生的Promise
-  const defer = $.Deferred();
+  const defer = $.Deferred()
 
   $.ajax({
     type: method,
@@ -18,12 +18,12 @@ const xhr = ({method = 'get', url, body = null}) => {
       icon: 'warning',
       stack: false
     })
-    defer.resolve(data);
+    defer.resolve(data)
   })
-  .fail(errHandler);
+  .fail(errHandler)
 
-  return defer.promise();
+  return defer.promise()
 }
 
 
-export default xhr;
+export default xhr

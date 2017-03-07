@@ -1,4 +1,4 @@
-import updateQuery from 'UTIL/updateQuery';
+import updateQuery from 'UTIL/updateQuery'
 
 export default {
   methods: {
@@ -7,7 +7,7 @@ export default {
      * @param {Object} newQsObj
      */
     updateQuery (newQsObj) {
-      this.$router.go(updateQuery(this.$route.path, newQsObj));
+      this.$router.go(updateQuery(this.$route.path, newQsObj))
     }
   }
 }

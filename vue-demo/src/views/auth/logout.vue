@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import authService from 'SERVICE/authService';
+import authService from 'SERVICE/authService'
 export default {
   init() {
     authService.logout().then(() => {
-      this.$root.userData = null;
-      this.$router.replace('/auth/login');
+      this.$root.userData = null
+      this.$router.replace('/auth/login')
     })
   }
 }

@@ -5,5 +5,5 @@
  * @return {String}
  */
 export default function dateTimeFormatter(timestamp, format = 'YYYY-MM-DD HH:mm:ss') {
-  return window.moment(timestamp).format(format);
+  return window.moment(timestamp).format(format)
 }

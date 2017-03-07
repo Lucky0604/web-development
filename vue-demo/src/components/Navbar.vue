@@ -37,7 +37,7 @@
         </ul>
       </li>
       <li v-else v-link-active>
-        <a v-link="{path:'/auth/login, activeClass: 'active'}">
+        <a v-link="{path:'/auth/login', activeClass: 'active'}">
           <i class="fa fa-sign-in fa-lg m-r-5"></i>
           Login
         </a>
@@ -47,8 +47,8 @@
 </template>
 
 <script>
-import routesMap from 'ROUTE/map/';
-import _pickBy from 'lodash/pickBy';
+import routesMap from 'ROUTE/map/'
+import _pickBy from 'lodash/pickBy'
 
 export default {
   computed: {

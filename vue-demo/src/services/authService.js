@@ -1,4 +1,4 @@
-import xhr from './xhr/';
+import xhr from './xhr/'
 
 /**
  * 用户认证所用到的API
@@ -40,3 +40,4 @@ class AuthService {
 }
 
 // 实例化后导出，全局单例
+export default new AuthService()

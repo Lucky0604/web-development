@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import trimQs from 'UTIL/trimQs';
+import trimQs from 'UTIL/trimQs'
 export default {
   computed: {
     matchedRoutes () {
@@ -30,11 +30,11 @@ export default {
   },
   methods: {
     refresh () {
-      let curPath = trimQs(this.$route.path);
-      this.$router.go(`/redirect?dest=${curPath}`);
+      let curPath = trimQs(this.$route.path)
+      this.$router.go(`/redirect?dest=${curPath}`)
     },
     back () {
-      history.back();
+      history.back()
     }
   }
 

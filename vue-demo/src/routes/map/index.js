@@ -1,5 +1,5 @@
 // 不同功能模块的路由分离
-import authRoutes from './auth';
+import authRoutes from './auth'
 
 export default {
   '*': {
@@ -45,7 +45,7 @@ export default {
        * 统一使用code-splitting 形式引入路由页面组件
        * build 时可通过AggressiveMergingPlugin / MinChunkSizePlugin 合并 chunks
        */
-      require(['VIEW/'], resolve);
+      require(['VIEW/'], resolve)
     }
   },
 

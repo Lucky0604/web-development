@@ -2,5 +2,5 @@
  * 按需全局化过滤器
  * 还可以在组件定义时的 filters 属性中按需引入
  */
-import Vue from 'vue';
-Vue.filter('dateTimeFormatter', require('./dateTimeFormatter').default);
+import Vue from 'vue'
+Vue.filter('dateTimeFormatter', require('./dateTimeFormatter').default)
