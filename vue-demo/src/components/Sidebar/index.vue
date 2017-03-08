@@ -8,7 +8,7 @@
           <span class="caret"></span>
         </a>
         <div class="collapse w-90p m-0-auto" :id="'panel'+$index">
-          <link v-for="subRoute" :path="subRoute.fullPath" :title="subRoute.title" :icon="subRoute.icon"></link>
+          <link v-for="subRoute in route.subRoutes" :path="subRoute.fullPath" :title="subRoute.title" :icon="subRoute.icon"></link>
         </div><!-- .collapse -->
       </div><!-- v-if -->
       <link v-else :path="route.path" :title="route.title" :icon="route.icon" :is-exact="true"></link>

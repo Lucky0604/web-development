@@ -48,19 +48,19 @@ export default {
       return Math.ceil(this.total / this.limit) - 1
     },
     curPageIdx () {
-      return Math.ceil(+this.offset$ / this.limit);
+      return Math.ceil(+this.offset$ / this.limit)
     },
     // 只显示９个按钮，包括两个[上一页][下一页]，因此只计算７个按钮
     displayPageBtns () {
       let n = this.totalPageIdx + 1    // 总页数为总页索引＋１
-      let i = this.curPageIdx + 1      // 当前页数为当前索引　＋１
+      let i = this.curPageIdx + 1      // 当前页数为当前索引 ＋１
 
-      // 0　表示'...'占位符
+      // 0 表示'...'占位符
       if (n <= 7) return (n => {
         let arr = []
-        while (n) {arr.unshift(n --)}
+        while (n) {arr.unshift(n--)}
         return arr
-      })(n);
+      })(n)
 
       if (i <= 3 || n - i < 3) {
         return [1, 2, 3, 0, n - 2, n - 1, n]

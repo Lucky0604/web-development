@@ -2,7 +2,7 @@ import msgService from 'SERVICE/msgService'
 
 export default {
   route: {
-    activate ({next} {
+    activate ({next}) {
       msgService
         .fetchById(this.$route.params.msgId)
         .then(msg => {
@@ -10,6 +10,6 @@ export default {
           this.$emit('MSG_LOADED')
           next()
         })
-    })
+    }
   }
 }

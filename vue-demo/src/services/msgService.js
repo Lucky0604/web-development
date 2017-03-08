@@ -59,9 +59,9 @@ class MsgService {
    * @resolve {Object} msg
    */
   update (msgBody) {
-    msgBody = {...msgBody};   // 在副本上操作
-    const msgId = msgBody.id;
-    delete msgBody.msgId;
+    msgBody = {...msgBody}   // 在副本上操作
+    const msgId = msgBody.id
+    delete msgBody.msgId
 
     return xhr({
       method: 'put',
@@ -84,4 +84,4 @@ class MsgService {
 }
 
 // 实例化后导出，全局单例
-export default new MsgService();
+export default new MsgService()

@@ -16,7 +16,7 @@ export default {
       const missingKeys = _difference(
         Object.keys(oldQuery),
         Object.keys(curQuery)
-      );
+      )
       this.autoSyncWithQuery(missingKeys)
     }
   },
@@ -24,7 +24,7 @@ export default {
     _init() {
       let specialFields = []
       for (let origField in this.$data) {
-        if (!origField.endsWith('$')) continue;
+        if (!origField.endsWith('$')) continue
         var field = origField.replace(/\$$/, '')
         specialFields.push(field)
         this._cache(origField)
@@ -49,9 +49,11 @@ export default {
       if (!missingKeys) this._init()   // 初始化
 
       const {query} = this.$route
-      var origField = `${field}$`
-      query[field] && (this[origField] = query[field])   // query 同步到本地
-      missingKeys && missingKeys.includes(field) && this._restore(origField)
+      this.specialFields_.forEach(field => {
+        var origField = `${field}$`
+        query[field] && (this[origField] = query[field])   // query 同步到本地
+        missingKeys && missingKeys.includes(field) && this._restore(origField)
+      })
     }
   }
 }

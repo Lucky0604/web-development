@@ -1,5 +1,6 @@
 // 不同功能模块的路由分离
 import authRoutes from './auth'
+import msgRoutes from './msg'
 
 export default {
   '*': {
@@ -49,5 +50,6 @@ export default {
     }
   },
 
+    ...msgRoutes,
   ...authRoutes
 }
