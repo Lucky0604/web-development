@@ -8,7 +8,7 @@ var webpack = require('webpack')
 var merge = require('webpack-merge')
 var utils = require('./utils')
 var baseWebpackConfig = require('./webpack.base.conf')
-var HtmlWebpackConfig = require('html-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 // 添加热加载相关的代码(hot-reload)
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
@@ -29,7 +29,7 @@ module.exports = merge(baseWebpackConfig, {
       'process.env': config.dev.env
     }),
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
-    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin

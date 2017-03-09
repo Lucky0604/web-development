@@ -33,7 +33,9 @@ module.exports = {
     port: 3000,
     assetsSubDirectory: 'static',
     assetsPublicPath:'/',
+
     context: [    // 代理路径
+      /*
       '/shopping',
       '/ugc',
       '/v1',
@@ -44,8 +46,11 @@ module.exports = {
       '/member',
       '/promotion',
       '/eus'
+      */
     ],
+
     proxyPath: 'https://mainsite-restapi.ele.me',
+
     /**
      * CSS soucemaps默认关闭，因为它的相对路径会有bug
      */
