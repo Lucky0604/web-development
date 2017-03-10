@@ -61,7 +61,7 @@ app.use(proxyMiddleware('/m.ele.me@json', {
 }))
 */
 // 为HTML5 history API处理fallback
-app.use(require('connect-history-api-fallback'))
+app.use(require('connect-history-api-fallback')())
 
 // 提供webpack打包输出
 app.use(devMiddleware)

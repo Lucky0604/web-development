@@ -7,6 +7,7 @@ import FastClick from 'fastclick'
 import routes from './router/router'
 import {routerMode} from './config/env'
 
+
 /**
 if ('addEventListener' in document) {
   document.addEventListener('DOMContentLoaded', function() {
@@ -15,7 +16,7 @@ if ('addEventListener' in document) {
 }
  */
 
-Vue.vue(VueRouter)
+Vue.use(VueRouter)
 const router = new VueRouter({
   routes,
   mode: routerMode,
