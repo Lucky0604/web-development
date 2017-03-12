@@ -1,4 +1,5 @@
 <template>
+
   <header id="head_top">
     <slot name="logo"></slot>
     <slot name="search"></slot>
@@ -22,11 +23,14 @@
     <slot name="changeCity"></slot>
     <slot name="changeLogin"></slot>
   </header>
+
+
 </template>
 
 <script>
   import {mapState, mapActions} from 'vuex'
   export default {
+
     data () {
       return {}
     },
@@ -48,5 +52,6 @@
         'getUserInfo'
       ]),
     },
+
   }
 </script>

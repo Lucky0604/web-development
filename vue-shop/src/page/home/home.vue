@@ -1,10 +1,10 @@
 <template>
   <div>
-    <!--
+
     <head-top signin-up="home">
       <span slot="logo" class="head-logo" @click="reload">中瑞商城</span>
     </head-top>
-    -->
+
     <nav class="city_nav">
       <div class="city_tip">
         <span>当前定位城市：</span>
@@ -45,7 +45,7 @@
 </template>
 
 <script>
-  // import headTop from '../../components/header/head'
+  import headTop from '../../components/header/head'
   import {cityGuess, hotCity, groupCity} from '../../service/getData'
 
   export default {
@@ -75,7 +75,7 @@
       })
     },
     components: {
-      // headTop
+      headTop
     },
 
     computed: {
