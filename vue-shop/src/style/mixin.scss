@@ -1,0 +1,70 @@
+$blue: #3190e8;
+$bc: #e4e4e4;
+$fc: #fff;
+
+// background img's addr and size
+@mixin bis($url) {
+	background-image: url($url);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+@mixin borderRadius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-o-border-radius: $radius;
+	border-radius: $radius;
+}
+
+// located the screen
+@mixin allcover {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+// center
+@mixin center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+// the middle of top and bottom
+@mixin ct {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+// the middle of left and right
+@mixin cl {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+// width and height
+@mixin wh($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+// font size, line height and family
+@mixin font($size, $line-height, $family: 'Microsoft Yahei') {
+	font: #{$size} / #{$line-height} $family;
+}
+
+// font size and color
+@mixin sc($size, $color) {
+	font-size: $size;
+	color: $color;
+}
+
+// flex
+@mixin fj($type: space-between) {
+	display: flex;
+	justify-content: $type;
+}
