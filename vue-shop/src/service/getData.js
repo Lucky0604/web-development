@@ -128,12 +128,18 @@ if (process.env.NODE_ENV === 'development') {
     longitude
   });
 
+  /**
+   * 获取用户信息
+   */
+  var getUser = () => fetch('GET', '/v1/user', {});
+
 } else {
   var cityGuess = () => setPromise(home.guesscity);
   var hotCity = () => setPromise(home.hotcity);
   var groupCity = () => setPromise(home.groupcity);
+  var getUser = () => setPromise(login.userInfo);
 }
 
-export {cityGuess, hotCity, groupCity}
+export {cityGuess, hotCity, groupCity, getUser}
 
 
