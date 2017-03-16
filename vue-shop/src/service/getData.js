@@ -58,7 +58,7 @@ if (process.env.NODE_ENV === 'development') {
   /**
    * 获取当前所在城市
    */
-  var currentCity = number => fetch('GET', '/v1/cities' + number, {});
+  var currentCity = number => fetch('GET', '/v1/cities/' + number, {});
 
   /**
    * 获取搜索地址
@@ -138,8 +138,10 @@ if (process.env.NODE_ENV === 'development') {
   var hotCity = () => setPromise(home.hotcity);
   var groupCity = () => setPromise(home.groupcity);
   var getUser = () => setPromise(login.userInfo);
+  // var currentCity = number => setPromise(city.currentcity);
+  // var searchPlace = (cityid, value) => setPromise(city.searchdata);
 }
 
-export {cityGuess, hotCity, groupCity, getUser}
+export {cityGuess, hotCity, groupCity, getUser, currentCity, searchPlace}
 
 
