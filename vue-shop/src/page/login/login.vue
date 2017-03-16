@@ -102,6 +102,7 @@
         } else {
           let res = await getCaptchas();
           this.captchaCodeImg = 'https://mainsite-restapi.ele.me/v1/captchas/' + res.code;
+          console.log(res.code);
         }
       },
       // 获取短信验证码
