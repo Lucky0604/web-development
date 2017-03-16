@@ -23,5 +23,8 @@ export default [{
     // 当前选择城市页
     path: '/city/:cityid',
     component: city
+  }, {
+    path: '/login',
+    component: login
   }]
 }]

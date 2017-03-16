@@ -133,6 +133,42 @@ if (process.env.NODE_ENV === 'development') {
    */
   var getUser = () => fetch('GET', '/v1/user', {});
 
+  /**
+   * 获取短信验证码
+   */
+  var mobileCode = phone => fetch('POST', '/v4/mobile/verify_code/send', {
+    mobile: phone,
+    scene: 'login',
+    type: 'sms'
+  })
+
+  /**
+   * 检测帐号是否存在
+   */
+  var checkExists = (checkNumber, type) => fetch('GET', '/v1/users/exists', {
+    [type]: checkNumber,
+    type
+  })
+
+  /**
+   * 手机号登录
+   */
+  var sendLogin = (code, mobile, validate_token) => fetch('POST', '/v1/login/app_mobile', {
+    code,
+    mobile,
+    validate_token
+  })
+
+  /**
+   * 获取captcha
+   */
+  var getCaptchas = () => fetch('POST', '/v1/captchas', {})
+
+  /**
+   * 帐号密码登录
+   */
+  var accountLogin = (username, password, captcha_code) => fetch('POST', '/v2/login', {username, password, captcha_code})
+
 } else {
   var cityGuess = () => setPromise(home.guesscity);
   var hotCity = () => setPromise(home.hotcity);
@@ -142,6 +178,6 @@ if (process.env.NODE_ENV === 'development') {
   // var searchPlace = (cityid, value) => setPromise(city.searchdata);
 }
 
-export {cityGuess, hotCity, groupCity, getUser, currentCity, searchPlace}
+export {cityGuess, hotCity, groupCity, getUser, currentCity, searchPlace, mobileCode, checkExists, getCaptchas, accountLogin}
 
 
