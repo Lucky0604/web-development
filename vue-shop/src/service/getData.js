@@ -153,11 +153,13 @@ if (process.env.NODE_ENV === 'development') {
   /**
    * 手机号登录
    */
+  /*
   var sendLogin = (code, mobile, validate_token) => fetch('POST', '/v1/login/app_mobile', {
     code,
     mobile,
     validate_token
   })
+  */
 
   /**
    * 获取captcha
@@ -178,6 +180,9 @@ if (process.env.NODE_ENV === 'development') {
   // var searchPlace = (cityid, value) => setPromise(city.searchdata);
 }
 
-export {cityGuess, hotCity, groupCity, getUser, currentCity, searchPlace, mobileCode, checkExists, getCaptchas, accountLogin}
+// 发送短信验证不需要反向代理
+var sendLogin = (code, mobile, validate_token) => setPromise(login.userInfo)
+
+export {cityGuess, hotCity, groupCity, getUser, currentCity, searchPlace, mobileCode, checkExists, getCaptchas, accountLogin, sendLogin}
 
 

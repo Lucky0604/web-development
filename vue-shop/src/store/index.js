@@ -10,7 +10,9 @@ import getters from './getters'
 Vue.use(Vuex)
 
 const state = {
-  userInfo: null    // 用户信息
+  userInfo: null,    // 用户信息
+  login: true,
+  imgPath: null
 }
 
 export default new Vuex.Store({
