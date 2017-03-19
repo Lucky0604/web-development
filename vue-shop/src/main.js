@@ -7,6 +7,7 @@ import FastClick from 'fastclick'
 import routes from './router/router'
 import {routerMode} from './config/env'
 import store from './store/'
+import './config/rem'
 
 
 

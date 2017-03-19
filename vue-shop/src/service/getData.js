@@ -183,6 +183,6 @@ if (process.env.NODE_ENV === 'development') {
 // 发送短信验证不需要反向代理
 var sendLogin = (code, mobile, validate_token) => setPromise(login.userInfo)
 
-export {cityGuess, hotCity, groupCity, getUser, currentCity, searchPlace, mobileCode, checkExists, getCaptchas, accountLogin, sendLogin}
+export {cityGuess, hotCity, groupCity, getUser, currentCity, searchPlace, mobileCode, checkExists, getCaptchas, accountLogin, sendLogin, msiteAddress, msiteFoodTypes, shopList}
 
 
