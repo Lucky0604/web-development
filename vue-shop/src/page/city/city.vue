@@ -5,7 +5,7 @@
     </head-top>
     <form class="city_form" v-on:submit.prevent>
       <div>
-        <input type="search" class="city_input input_style" name="city" placeholder="输入学校，商务楼，地址">
+        <input type="search" class="city_input input_style" name="city" placeholder="输入学校，商务楼，地址" required v-model="inputValue">
       </div>
       <div>
         <input type="submit" class="city_submit input_style" name="submit" @click="postpois">

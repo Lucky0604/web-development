@@ -72,7 +72,7 @@ if (process.env.NODE_ENV === 'development') {
   /**
    * 获取msite页面地址信息
    */
-  var msiteAddress = geohash => fetch('GET', '/v2/pois' + geohash, {});
+  var msiteAddress = geohash => fetch('GET', '/v2/pois/' + geohash, {});
 
   /**
    * 获取msite页面食品分类列表
