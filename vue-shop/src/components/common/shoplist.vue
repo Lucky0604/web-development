@@ -67,6 +67,7 @@
   import {showBack, animate} from 'src/config/mUtils'
   import {loadMore, getImgPath} from './mixin'
   import loading from './loading'
+  import ratingStar from './ratingStar'
   export default {
     data () {
       return {
@@ -85,6 +86,7 @@
       ratingStar
     },
     props: ['restaurantCategoryId', 'restaurantCategoryIds', 'sortByType', 'deliveryMode', 'supportIds', 'confirmSelect', 'geohash'],
+    mixins: [loadMore, getImgPath],
     computed: {
       ...mapState([
         'latitude', 'longitude'

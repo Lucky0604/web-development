@@ -11,8 +11,11 @@ Vue.use(Vuex)
 
 const state = {
   userInfo: null,    // 用户信息
-  login: true,
-  imgPath: null
+  login: true,    // 是否登录
+  imgPath: null,    // 头像地址
+  latitude: '',    // 当前位置纬度
+  longitude: '',    // 当前位置经度
+  geohash: 'wtw3sm0q087',
 }
 
 export default new Vuex.Store({

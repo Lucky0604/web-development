@@ -15,7 +15,7 @@
       <div class="swiper-container">
 
         <div class="swiper-wrapper">
-          <div class="swiper-slide foot_types_container" v-for="(item, index) in foodTypes" :key="index">
+          <div class="swiper-slide food_types_container" v-for="(item, index) in foodTypes" :key="index">
             <router-link :to="{path: '/food', query: {geohash, title: foodItem.title, restaurant_category_id: getCategoryId(foodItem.link)}}" v-for="foodItem in item" :key="foodItem.id" class="link_to_food" v-if="foodItem.title !== '预定早餐'">
               <figure>
                 <img :src="imgBaseUrl + foodItem.image_url" alt="">
@@ -53,7 +53,7 @@
   import headTop from 'src/components/header/head'
   import footGuide from 'src/components/footer/footGuide'
   import shopList from 'src/components/common/shoplist'
-  import {msiteAddress, msiteFoodTyps, msiteShopList} from 'src/service/getData'
+  import {msiteAddress, msiteFoodTypes, msiteShopList} from 'src/service/getData'
   import 'src/plugins/swiper.min.js'
   import 'src/style/swiper.min.css'
 
@@ -81,7 +81,7 @@
     },
     mounted() {
       // 获取导航食品类型列表
-      msiteFoodTyps(this.geohash).then(res => {
+      msiteFoodTypes(this.geohash).then(res => {
         let resLength = res.length;
         let resArr = res.concat([]);    // 返回一个新的数组
         let foodArr = [];

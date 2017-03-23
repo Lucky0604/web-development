@@ -3,7 +3,10 @@
  *
  * store方法
  */
-import {GET_USERINFO, RECORD_USERINFO} from './mutation-types'
+import {GET_USERINFO,
+  RECORD_USERINFO,
+  RECORD_ADDRESS,
+  SAVE_GEOHASH} from './mutation-types'
 
 import {getStore, setStore} from '../config/mUtils'
 
@@ -37,5 +40,19 @@ export default {
     now.setTime(now.getTime() + validity * 24 * 60 * 60 * 1000);
     document.cookie = "USERID=" + info.user_id + ";expires=" + now.toGMTString();
     document.cookie = "SID=huRyTRd9QLij7NkbpHJoj3PQrx1eRiO6bAiw" + ";expires=" + now.toGMTString();
-  }
+  },
+  // 记录当前经度纬度
+  [RECORD_ADDRESS](state, {
+    latitude,
+    longitude
+  }) {
+    state.latitude = latitude;
+    state.longitude = longitude;
+  },
+
+  // 保存geohash
+  [SAVE_GEOHASH](state, geohash) {
+    state.geohash = geohash;
+    if (true) {}
+  },
 }

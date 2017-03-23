@@ -1,7 +1,7 @@
 <template>
   <div class="city_container">
     <head-top :head-title="cityname" go-back="true">
-      <router-link to="/home" slot="changecity" class="change_city">切换城市</router-link>
+      <router-link to="/home" slot="changeCity" class="change_city">切换城市</router-link>
     </head-top>
     <form class="city_form" v-on:submit.prevent>
       <div>
