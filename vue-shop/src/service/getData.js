@@ -189,6 +189,43 @@ if (process.env.NODE_ENV === 'development') {
    */
   var accountLogin = (username, password, captcha_code) => fetch('POST', '/v2/login', {username, password, captcha_code})
 
+  /**
+   * 获取shop页面商铺详情
+   */
+  var shopDetails = (shopid, latitude, longitude) => fetch('GET', '/shopping/restaurant/' + shopid, {
+    latitude,
+    longitude: longitude + '&extras[]=activities&extras[]=album&extras[]=license&extras[]=identification&extras[]=statistics'
+  })
+
+  /**
+   * 获取food页面的商家属性活动列表
+   */
+  var foodMenu = restaurant_id => fetch('GET', '/shopping/v2/menu', {
+    restaurant_id
+  })
+
+  /**
+   * 获取商铺评价列表
+   */
+  var getRatingList = (offset, tag_name = '') => fetch('GET', '/ugc/v2/restaurants/834828/ratings', {
+    has_content: true,
+    offset,
+    limit: 10,
+    tag_name
+  })
+
+  /**
+   * 获取商铺评价分数
+   */
+  var ratingScores = shopid => fetch('GET', '/ugc/v2/restaurants/' + shopid + '/ratings/scores', {})
+
+  /**
+   * 获取商铺评价分类
+   */
+  var ratingTags = shopid => fetch('GET', '/ugc/v2/restaurants/' + shopid + '/ratings/tags', {})
+
+
+
 } else {
   var cityGuess = () => setPromise(home.guesscity);
   var hotCity = () => setPromise(home.hotcity);
@@ -201,6 +238,8 @@ if (process.env.NODE_ENV === 'development') {
 // 发送短信验证不需要反向代理
 var sendLogin = (code, mobile, validate_token) => setPromise(login.userInfo)
 
-export {cityGuess, hotCity, groupCity, getUser, currentCity, searchPlace, mobileCode, checkExists, getCaptchas, accountLogin, sendLogin, msiteAddress, msiteFoodTypes, shopList, foodCategory, foodActivity, foodDelivery}
+export {cityGuess, hotCity, groupCity, getUser, currentCity, searchPlace, mobileCode, checkExists, getCaptchas, accountLogin, sendLogin, msiteAddress,
+  msiteFoodTypes, shopList, foodCategory, foodActivity, foodDelivery,
+shopDetails, foodMenu, getRatingList, ratingScores, ratingTags}
 
 
