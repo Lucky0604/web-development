@@ -129,6 +129,24 @@ if (process.env.NODE_ENV === 'development') {
   });
 
   /**
+   * 获取food页面的配送方式
+   */
+  var foodDelivery = (latitude, longitude) => fetch('GET', '/shopping/v1/restaurants/delivery_modes', {
+    latitude,
+    longitude,
+    kw: ''
+  });
+
+  /**
+   * 获取food页面的商家属性活动列表
+   */
+  var foodActivity = (latitude, longitude) => fetch('GET', '/shopping/v1/restaurants/activity_attributes', {
+    latitude,
+    longitude,
+    kw: ''
+  })
+
+  /**
    * 获取用户信息
    */
   var getUser = () => fetch('GET', '/v1/user', {});
@@ -183,6 +201,6 @@ if (process.env.NODE_ENV === 'development') {
 // 发送短信验证不需要反向代理
 var sendLogin = (code, mobile, validate_token) => setPromise(login.userInfo)
 
-export {cityGuess, hotCity, groupCity, getUser, currentCity, searchPlace, mobileCode, checkExists, getCaptchas, accountLogin, sendLogin, msiteAddress, msiteFoodTypes, shopList}
+export {cityGuess, hotCity, groupCity, getUser, currentCity, searchPlace, mobileCode, checkExists, getCaptchas, accountLogin, sendLogin, msiteAddress, msiteFoodTypes, shopList, foodCategory, foodActivity, foodDelivery}
 
 
