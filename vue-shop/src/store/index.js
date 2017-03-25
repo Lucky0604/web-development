@@ -15,7 +15,10 @@ const state = {
   imgPath: null,    // 头像地址
   latitude: '',    // 当前位置纬度
   longitude: '',    // 当前位置经度
-  geohash: 'wtw3sm0q087',
+  geohash: 'wtw3sm0q087',   // address's geo value
+  shopDetail: null,     // the shop's detail
+  cartList: {},       // the item list in cart
+  shopid: null,       // the shop's id
 }
 
 export default new Vuex.Store({
