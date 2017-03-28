@@ -12,6 +12,7 @@ const msite = r => require.ensure([], () => r(require('../page/msite/msite')), '
 const food = r => require.ensure([], () => r(require('../page/food/food')), 'food')
 const shop = r => require.ensure([], () => r(require('../page/shop/shop')), 'shop')
 const shopDetail = r => require.ensure([], () => r(require('../page/shop/children/shopDetail')), 'shopDetail')
+const foodDetail = r => require.ensure([], () => r(require('../page/shop/children/foodDetail')), 'foodDetail')
 
 export default [{
   path: '/',
@@ -46,6 +47,9 @@ export default [{
     children: [{
       path: 'shopDetail',     // shop detail page
       component: shopDetail
+    }, {
+      path: 'foodDetail',
+      component: foodDetail
     }]
   }]
 }]
