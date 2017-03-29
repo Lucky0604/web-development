@@ -16,3 +16,6 @@ export const REDUCE_CART = 'REDUCE_CART'
 export const INIT_BUYCART = 'INIT_BUYCART'
 export const CLEAR_CART = 'CLEAR_CART'
 export const RECORD_SHOPDETAIL = 'RECORD_SHOPDETAIL'
+
+// 订单详情
+export const SAVE_ORDER = 'SAVE_ORDER'

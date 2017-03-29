@@ -11,7 +11,8 @@ import {GET_USERINFO,
   ADD_CART,
   INIT_BUYCART,
   REDUCE_CART,
-  CLEAR_CART} from './mutation-types'
+  CLEAR_CART,
+  SAVE_ORDER} from './mutation-types'
 
 import {getStore, setStore} from '../config/mUtils'
 
@@ -171,5 +172,10 @@ export default {
     state.cartList[shopid] = null;
     state.cartList = {...state.cartList};
     setStore('buyCart', state.cartList);
+  },
+
+  // 进入订单详情页前保存该订单信息
+  [SAVE_ORDER](state, orderDetail) {
+    state.orderDetail = orderDetail;
   }
 }

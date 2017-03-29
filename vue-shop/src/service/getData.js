@@ -224,6 +224,13 @@ if (process.env.NODE_ENV === 'development') {
    */
   var ratingTags = shopid => fetch('GET', '/ugc/v2/restaurants/' + shopid + '/ratings/tags', {})
 
+  /**
+   * 获取订单列表
+   */
+  var getOrderList = (user_id, offset) => fetch('GET', '/bos/v2/users/' + user_id + '/orders', {
+    limit: 10,
+    offset
+  })
 
 
 } else {
@@ -240,6 +247,7 @@ var sendLogin = (code, mobile, validate_token) => setPromise(login.userInfo)
 
 export {cityGuess, hotCity, groupCity, getUser, currentCity, searchPlace, mobileCode, checkExists, getCaptchas, accountLogin, sendLogin, msiteAddress,
   msiteFoodTypes, shopList, foodCategory, foodActivity, foodDelivery,
-shopDetails, foodMenu, getRatingList, ratingScores, ratingTags}
+shopDetails, foodMenu, getRatingList, ratingScores, ratingTags,
+getOrderList}
 
 
