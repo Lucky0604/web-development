@@ -232,6 +232,11 @@ if (process.env.NODE_ENV === 'development') {
     offset
   })
 
+  /**
+   * 获取订单详情
+   */
+  var getOrderDetail = (user_id, orderid) => fetch('GET', '/bos/v1/users/' + user_id + '/orders/' + orderid + '/snapshot', {});
+
 
 } else {
   var cityGuess = () => setPromise(home.guesscity);
@@ -248,6 +253,6 @@ var sendLogin = (code, mobile, validate_token) => setPromise(login.userInfo)
 export {cityGuess, hotCity, groupCity, getUser, currentCity, searchPlace, mobileCode, checkExists, getCaptchas, accountLogin, sendLogin, msiteAddress,
   msiteFoodTypes, shopList, foodCategory, foodActivity, foodDelivery,
 shopDetails, foodMenu, getRatingList, ratingScores, ratingTags,
-getOrderList}
+getOrderList, getOrderDetail}
 
 

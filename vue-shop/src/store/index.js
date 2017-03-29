@@ -19,6 +19,7 @@ const state = {
   shopDetail: null,     // the shop's detail
   cartList: {},       // the item list in cart
   shopid: null,       // the shop's id
+  orderDetail: null,    // 订单详情
 }
 
 export default new Vuex.Store({
