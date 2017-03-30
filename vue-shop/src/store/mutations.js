@@ -13,7 +13,8 @@ import {GET_USERINFO,
   REDUCE_CART,
   CLEAR_CART,
   SAVE_ORDER,
-  SAVE_AVATAR} from './mutation-types'
+  SAVE_AVATAR,
+  OUT_LOGIN} from './mutation-types'
 
 import {getStore, setStore} from '../config/mUtils'
 
@@ -183,5 +184,11 @@ export default {
   // 个人中心，头像
   [SAVE_AVATAR](state, imgPath) {
     state.imgPath = imgPath;
+  },
+
+  // 退出登陆
+  [OUT_LOGIN](state) {
+    state.userInfo = null;
+    state.login = false;
   }
 }
