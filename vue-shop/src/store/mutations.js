@@ -12,7 +12,8 @@ import {GET_USERINFO,
   INIT_BUYCART,
   REDUCE_CART,
   CLEAR_CART,
-  SAVE_ORDER} from './mutation-types'
+  SAVE_ORDER,
+  SAVE_AVATAR} from './mutation-types'
 
 import {getStore, setStore} from '../config/mUtils'
 
@@ -177,5 +178,10 @@ export default {
   // 进入订单详情页前保存该订单信息
   [SAVE_ORDER](state, orderDetail) {
     state.orderDetail = orderDetail;
+  },
+
+  // 个人中心，头像
+  [SAVE_AVATAR](state, imgPath) {
+    state.imgPath = imgPath;
   }
 }

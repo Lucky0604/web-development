@@ -17,6 +17,7 @@ const shopSafe = r => require.ensure([], () => r(require('../page/shop/children/
 const order = r => require.ensure([], () => r(require('../page/order/order')), 'order')
 const orderDetail = r => require.ensure([], () => r(require('../page/order/children/orderDetail')), 'orderDetail')
 const search = r => require.ensure([], () => r(require('../page/search/search')), 'search')
+const profile = r => require.ensure([], () => r(require('../page/profile/profile')), 'profile')
 
 export default [{
   path: '/',
@@ -71,5 +72,9 @@ export default [{
     // 搜索页
     path: '/search/:geohash',
     component: search
+  }, {
+    // 个人信息页
+    path: '/profile',
+    component: profile
   }]
 }]
