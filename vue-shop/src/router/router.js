@@ -16,6 +16,7 @@ const foodDetail = r => require.ensure([], () => r(require('../page/shop/childre
 const shopSafe = r => require.ensure([], () => r(require('../page/shop/children/children/shopSafe')), 'shopSafe')
 const order = r => require.ensure([], () => r(require('../page/order/order')), 'order')
 const orderDetail = r => require.ensure([], () => r(require('../page/order/children/orderDetail')), 'orderDetail')
+const search = r => require.ensure([], () => r(require('../page/search/search')), 'search')
 
 export default [{
   path: '/',
@@ -66,5 +67,9 @@ export default [{
       path: 'orderDetail',     // 订单详情页
       component: orderDetail
     }]
+  }, {
+    // 搜索页
+    path: '/search/:geohash',
+    component: search
   }]
 }]

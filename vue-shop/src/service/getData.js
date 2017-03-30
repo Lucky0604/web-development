@@ -237,6 +237,16 @@ if (process.env.NODE_ENV === 'development') {
    */
   var getOrderDetail = (user_id, orderid) => fetch('GET', '/bos/v1/users/' + user_id + '/orders/' + orderid + '/snapshot', {});
 
+  /**
+   * 获取search页面搜索结果
+   */
+  var searchRestaurant = (geohash, keyword) => fetch('GET', '/v4/restaurants', {
+    'extras[]': 'restaurant_activity',
+    geohash,
+    keyword,
+    type: 'search'
+  });
+
 
 } else {
   var cityGuess = () => setPromise(home.guesscity);
@@ -253,6 +263,6 @@ var sendLogin = (code, mobile, validate_token) => setPromise(login.userInfo)
 export {cityGuess, hotCity, groupCity, getUser, currentCity, searchPlace, mobileCode, checkExists, getCaptchas, accountLogin, sendLogin, msiteAddress,
   msiteFoodTypes, shopList, foodCategory, foodActivity, foodDelivery,
 shopDetails, foodMenu, getRatingList, ratingScores, ratingTags,
-getOrderList, getOrderDetail}
+getOrderList, getOrderDetail, searchRestaurant}
 
 
