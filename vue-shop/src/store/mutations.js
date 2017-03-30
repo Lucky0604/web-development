@@ -15,7 +15,8 @@ import {GET_USERINFO,
   SAVE_ORDER,
   SAVE_AVATAR,
   OUT_LOGIN,
-  RESET_NAME} from './mutation-types'
+  RESET_NAME,
+  SAVE_ADDRESS} from './mutation-types'
 
 import {getStore, setStore} from '../config/mUtils'
 
@@ -196,5 +197,10 @@ export default {
   // 修改用户名
   [RESET_NAME](state, username) {
     state.userInfo = Object.assign({}, state.userInfo, {username});
+  },
+
+  // 删除地址列表
+  [SAVE_ADDRESS](state, newAddress) {
+    state.removeAddress = newAddress;
   }
 }

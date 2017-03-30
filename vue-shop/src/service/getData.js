@@ -247,6 +247,18 @@ if (process.env.NODE_ENV === 'development') {
     type: 'search'
   });
 
+  /**
+   * 个人中心编辑地址
+   */
+  var getAddressList = (user_id) => fetch('GET', '/v1/users/' + user_id + '/addresses');
+
+  /**
+   * 删除地址
+   */
+  var deleteAddress = (userid, addressid) => fetch('DELETE', '/v1/users/' + userid + '/addresses/' + addressid);
+
+
+
 
 } else {
   var cityGuess = () => setPromise(home.guesscity);
@@ -263,6 +275,6 @@ var sendLogin = (code, mobile, validate_token) => setPromise(login.userInfo)
 export {cityGuess, hotCity, groupCity, getUser, currentCity, searchPlace, mobileCode, checkExists, getCaptchas, accountLogin, sendLogin, msiteAddress,
   msiteFoodTypes, shopList, foodCategory, foodActivity, foodDelivery,
 shopDetails, foodMenu, getRatingList, ratingScores, ratingTags,
-getOrderList, getOrderDetail, searchRestaurant}
+getOrderList, getOrderDetail, searchRestaurant, getAddressList, deleteAddress}
 
 

@@ -20,6 +20,7 @@ const state = {
   cartList: {},       // the item list in cart
   shopid: null,       // the shop's id
   orderDetail: null,    // 订单详情
+  removeAddress: [],    // 移除地址
 }
 
 export default new Vuex.Store({

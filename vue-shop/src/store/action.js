@@ -3,8 +3,8 @@
  *
  * action方法
  */
-import {getUser} from '../service/getData'
-import {GET_USERINFO} from './mutation-types'
+import {getUser, getAddressList} from '../service/getData'
+import {GET_USERINFO, SAVE_ADDRESS} from './mutation-types'
 
 export default {
   async getUserInfo({
@@ -13,5 +13,13 @@ export default {
   }) {
     let res = await getUser();
     commit(GET_USERINFO, res)
+  },
+  async saveAddress({
+                     commit,
+                     state
+                    }) {
+    if (state.removeAddress.length > 0) return;
+    let address = await getAddressList(state.userInfo.user_id);
+    commit(SAVE_ADDRESS, address);
   }
 }
