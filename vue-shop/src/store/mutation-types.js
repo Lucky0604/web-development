@@ -23,3 +23,4 @@ export const SAVE_ORDER = 'SAVE_ORDER'
 // 个人中心
 export const SAVE_AVATAR = 'SAVE_AVATAR'
 export const OUT_LOGIN = 'OUT_LOGIN'
+export const RESET_NAME = 'RESET_NAME'

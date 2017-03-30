@@ -14,7 +14,8 @@ import {GET_USERINFO,
   CLEAR_CART,
   SAVE_ORDER,
   SAVE_AVATAR,
-  OUT_LOGIN} from './mutation-types'
+  OUT_LOGIN,
+  RESET_NAME} from './mutation-types'
 
 import {getStore, setStore} from '../config/mUtils'
 
@@ -190,5 +191,10 @@ export default {
   [OUT_LOGIN](state) {
     state.userInfo = null;
     state.login = false;
+  },
+
+  // 修改用户名
+  [RESET_NAME](state, username) {
+    state.userInfo = Object.assign({}, state.userInfo, {username});
   }
 }

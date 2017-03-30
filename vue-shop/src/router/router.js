@@ -19,6 +19,7 @@ const orderDetail = r => require.ensure([], () => r(require('../page/order/child
 const search = r => require.ensure([], () => r(require('../page/search/search')), 'search')
 const profile = r => require.ensure([], () => r(require('../page/profile/profile')), 'profile')
 const info = r => require.ensure([], () => r(require('../page/profile/children/info')), 'info')
+const setusername = r => require.ensure([], () => r(require('../page/profile/children/setusername')), 'setusername')
 
 export default [{
   path: '/',
@@ -80,6 +81,9 @@ export default [{
     children: [{
       path: 'info',    // 个人信息详情页
       component: info
+    }, {
+      path: 'setusername',
+      component: setusername
     }]
   }]
 }]
