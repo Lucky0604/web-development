@@ -310,6 +310,18 @@ if (process.env.NODE_ENV === 'development') {
    */
   var getExpired = id => fetch('GET', '/promotion/v2/users/' + id + '/expired_hongbaos?limit=10&offset=0', {})
 
+  /**
+   * 发送帐号
+   */
+  var sendMobile = (sendData, captcha_code, type, password) => fetch('POST', '/v1/mobile/verify_code/send', {
+    action: 'send',
+    captcha_code,
+    [type]:sendData,
+    type: 'sms',
+    way: type,
+    password
+  })
+
 
 } else {
   var cityGuess = () => setPromise(home.guesscity);
@@ -327,6 +339,6 @@ export {cityGuess, hotCity, groupCity, getUser, currentCity, searchPlace, mobile
   msiteFoodTypes, shopList, foodCategory, foodActivity, foodDelivery,
 shopDetails, foodMenu, getRatingList, ratingScores, ratingTags,
 getOrderList, getOrderDetail, searchRestaurant, getAddressList, deleteAddress, postAddAddress, getSearchAddress, payRequest,
-getHongbaoNum, exChangeHongbao, getExpired}
+getHongbaoNum, exChangeHongbao, getExpired, sendMobile}
 
 

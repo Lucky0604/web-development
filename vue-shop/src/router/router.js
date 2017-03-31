@@ -31,6 +31,8 @@ const hbHistory = r => require.ensure([], () => r(require('../page/benefit/child
 const exchange = r => require.ensure([], () => r(require('../page/benefit/children/exchange')), 'exchange')
 const commend = r => require.ensure([], () => r(require('../page/benefit/children/commend')), 'commend')
 const points = r => require.ensure([], () => r(require('../page/points/points')), 'points')
+const pointsDetail = r => require.ensure([], () => r(require('../page/points/children/detail')), 'pointsDetail')
+const forget = r => require.ensure([], () => r(require('../page/forget/forget')), 'forget')
 
 
 export default [{
@@ -136,6 +138,14 @@ export default [{
   }, {
     // 我的积分页
     path: 'points',
-    component: points
+    component: points,
+    children: [{
+      path: 'detail',    // 积分说明
+      component: pointsDetail
+    }]
+  }, {
+    // 修改密码页
+    path: 'forget',
+    component: forget
   }]
 }]
