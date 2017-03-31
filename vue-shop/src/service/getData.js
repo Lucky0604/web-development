@@ -257,6 +257,21 @@ if (process.env.NODE_ENV === 'development') {
    */
   var deleteAddress = (userid, addressid) => fetch('DELETE', '/v1/users/' + userid + '/addresses/' + addressid);
 
+  /**
+   * 新增地址
+   */
+  var postAddAddress = (userId, address, address_detail, geohash, name, phone, phone_bk, poi_type, sex, tag, tag_type) => fetch('POST', '/v1/users/' + userId + '/addresses', {
+    address,
+    address_detail,
+    geohash,
+    name,
+    phone,
+    phone_bk,
+    poi_type,
+    sex,
+    tag,
+    tag_type
+  })
 
 
 
@@ -275,6 +290,6 @@ var sendLogin = (code, mobile, validate_token) => setPromise(login.userInfo)
 export {cityGuess, hotCity, groupCity, getUser, currentCity, searchPlace, mobileCode, checkExists, getCaptchas, accountLogin, sendLogin, msiteAddress,
   msiteFoodTypes, shopList, foodCategory, foodActivity, foodDelivery,
 shopDetails, foodMenu, getRatingList, ratingScores, ratingTags,
-getOrderList, getOrderDetail, searchRestaurant, getAddressList, deleteAddress}
+getOrderList, getOrderDetail, searchRestaurant, getAddressList, deleteAddress, postAddAddress}
 
 

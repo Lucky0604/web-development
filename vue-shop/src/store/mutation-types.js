@@ -26,3 +26,4 @@ export const OUT_LOGIN = 'OUT_LOGIN'
 export const RESET_NAME = 'RESET_NAME'
 
 export const SAVE_ADDRESS = 'SAVE_ADDRESS'
+export const ADD_ADDRESS = 'ADD_ADDRESS'

@@ -16,7 +16,8 @@ import {GET_USERINFO,
   SAVE_AVATAR,
   OUT_LOGIN,
   RESET_NAME,
-  SAVE_ADDRESS} from './mutation-types'
+  SAVE_ADDRESS,
+  ADD_ADDRESS} from './mutation-types'
 
 import {getStore, setStore} from '../config/mUtils'
 
@@ -202,5 +203,10 @@ export default {
   // 删除地址列表
   [SAVE_ADDRESS](state, newAddress) {
     state.removeAddress = newAddress;
+  },
+
+  // 增加地址
+  [ADD_ADDRESS](state, obj) {
+    state.removeAddress = [obj, ...state.removeAddress];
   }
 }

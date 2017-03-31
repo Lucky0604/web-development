@@ -21,6 +21,8 @@ const state = {
   shopid: null,       // the shop's id
   orderDetail: null,    // 订单详情
   removeAddress: [],    // 移除地址
+  newAddress: [],    // 确认订单页新的地址
+  addAddress: '',
 }
 
 export default new Vuex.Store({

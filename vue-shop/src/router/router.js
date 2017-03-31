@@ -21,6 +21,7 @@ const profile = r => require.ensure([], () => r(require('../page/profile/profile
 const info = r => require.ensure([], () => r(require('../page/profile/children/info')), 'info')
 const setusername = r => require.ensure([], () => r(require('../page/profile/children/setusername')), 'setusername')
 const address = r => require.ensure([], () => r(require('../page/profile/children/children/address')), 'address')
+const add = r => require.ensure([], () => r(require('../page/profile/children/children/children/add')), 'add')
 
 export default [{
   path: '/',
@@ -84,7 +85,11 @@ export default [{
       component: info,
       children: [{
         path: 'address',
-        component: address
+        component: address,    // 编辑地址
+        children: [{
+          path: 'add',
+          component: add,
+        }]
       }]
     }, {
       path: 'setusername',
