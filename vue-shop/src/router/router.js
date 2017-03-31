@@ -24,6 +24,7 @@ const address = r => require.ensure([], () => r(require('../page/profile/childre
 const add = r => require.ensure([], () => r(require('../page/profile/children/children/children/add')), 'add')
 const addDetail = r => require.ensure([], () => r(require('../page/profile/children/children/children/children/addDetail')),  'addDetail')
 const balance = r => require.ensure([], () => r(require('../page/balance/balance')), 'balance')
+const benefit = r => require.ensure([], () => r(require('../page/benefit/benefit')), 'benefit')
 
 export default [{
   path: '/',
@@ -105,5 +106,9 @@ export default [{
     // 余额
     path: 'balance',
     component: balance
+  }, {
+    // 我的优惠页
+    path: 'benefit',
+    component: benefit
   }]
 }]
