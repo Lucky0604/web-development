@@ -23,6 +23,7 @@ const setusername = r => require.ensure([], () => r(require('../page/profile/chi
 const address = r => require.ensure([], () => r(require('../page/profile/children/children/address')), 'address')
 const add = r => require.ensure([], () => r(require('../page/profile/children/children/children/add')), 'add')
 const addDetail = r => require.ensure([], () => r(require('../page/profile/children/children/children/children/addDetail')),  'addDetail')
+const balance = r => require.ensure([], () => r(require('../page/balance/balance')), 'balance')
 
 export default [{
   path: '/',
@@ -100,5 +101,9 @@ export default [{
       path: 'setusername',
       component: setusername
     }]
+  }, {
+    // 余额
+    path: 'balance',
+    component: balance
   }]
 }]
