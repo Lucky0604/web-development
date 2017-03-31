@@ -25,6 +25,13 @@ const add = r => require.ensure([], () => r(require('../page/profile/children/ch
 const addDetail = r => require.ensure([], () => r(require('../page/profile/children/children/children/children/addDetail')),  'addDetail')
 const balance = r => require.ensure([], () => r(require('../page/balance/balance')), 'balance')
 const benefit = r => require.ensure([], () => r(require('../page/benefit/benefit')), 'benefit')
+const coupon = r => require.ensure([], () => r(require('../page/benefit/children/coupon')), 'coupon')
+const hbDescription = r => require.ensure([], () => r(require('../page/benefit/children/hbDescription')), 'hbDescription')
+const hbHistory = r => require.ensure([], () => r(require('../page/benefit/children/hbHistory')), 'hbHistory')
+const exchange = r => require.ensure([], () => r(require('../page/benefit/children/exchange')), 'exchange')
+const commend = r => require.ensure([], () => r(require('../page/benefit/children/commend')), 'commend')
+const points = r => require.ensure([], () => r(require('../page/points/points')), 'points')
+
 
 export default [{
   path: '/',
@@ -109,6 +116,26 @@ export default [{
   }, {
     // 我的优惠页
     path: 'benefit',
-    component: benefit
+    component: benefit,
+    children: [{
+      path: 'coupon',    // 代金券说明
+      component: coupon
+    }, {
+      path: 'hbDescription',    // 红包说明
+      component: hbDescription
+    }, {
+      path: 'hbHistory',    // 历史红包
+      component: hbHistory
+    }, {
+      path: 'exchange',    // 兑换红包
+      component: exchange
+    }, {
+      path: 'commend',    // 推荐有奖
+      component: commend
+    }]
+  }, {
+    // 我的积分页
+    path: 'points',
+    component: points
   }]
 }]

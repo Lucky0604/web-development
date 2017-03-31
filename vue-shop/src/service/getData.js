@@ -297,6 +297,19 @@ if (process.env.NODE_ENV === 'development') {
    */
   var getHongbaoNum = id => fetch('GET', '/promotion/v2/users/' + id + '/hongbaos', {})
 
+  /**
+   * 兑换红包
+   */
+  var exChangeHongbao = (id, exchange_code, captcha_code) => fetch('POST', '/v1/users/' + id + '/hongbao/exchange', {
+    exchange_code,
+    captcha_code
+  })
+
+  /**
+   * 获取过期红包
+   */
+  var getExpired = id => fetch('GET', '/promotion/v2/users/' + id + '/expired_hongbaos?limit=10&offset=0', {})
+
 
 } else {
   var cityGuess = () => setPromise(home.guesscity);
@@ -314,6 +327,6 @@ export {cityGuess, hotCity, groupCity, getUser, currentCity, searchPlace, mobile
   msiteFoodTypes, shopList, foodCategory, foodActivity, foodDelivery,
 shopDetails, foodMenu, getRatingList, ratingScores, ratingTags,
 getOrderList, getOrderDetail, searchRestaurant, getAddressList, deleteAddress, postAddAddress, getSearchAddress, payRequest,
-getHongbaoNum}
+getHongbaoNum, exChangeHongbao, getExpired}
 
 
