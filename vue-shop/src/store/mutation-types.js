@@ -27,3 +27,4 @@ export const RESET_NAME = 'RESET_NAME'
 
 export const SAVE_ADDRESS = 'SAVE_ADDRESS'
 export const ADD_ADDRESS = 'ADD_ADDRESS'
+export const SAVE_ADDDETAIL = 'SAVE_ADDDETAIL'

@@ -271,8 +271,15 @@ if (process.env.NODE_ENV === 'development') {
     sex,
     tag,
     tag_type
-  })
+  });
 
+  /**
+   * 个人中心里搜索地址
+   */
+  var getSearchAddress = (keyword) =>  fetch('GET', 'v1/pois', {
+    keyword: keyword,
+    type: 'nearby'
+  })
 
 
 } else {
@@ -290,6 +297,6 @@ var sendLogin = (code, mobile, validate_token) => setPromise(login.userInfo)
 export {cityGuess, hotCity, groupCity, getUser, currentCity, searchPlace, mobileCode, checkExists, getCaptchas, accountLogin, sendLogin, msiteAddress,
   msiteFoodTypes, shopList, foodCategory, foodActivity, foodDelivery,
 shopDetails, foodMenu, getRatingList, ratingScores, ratingTags,
-getOrderList, getOrderDetail, searchRestaurant, getAddressList, deleteAddress, postAddAddress}
+getOrderList, getOrderDetail, searchRestaurant, getAddressList, deleteAddress, postAddAddress, getSearchAddress}
 
 

@@ -22,6 +22,7 @@ const info = r => require.ensure([], () => r(require('../page/profile/children/i
 const setusername = r => require.ensure([], () => r(require('../page/profile/children/setusername')), 'setusername')
 const address = r => require.ensure([], () => r(require('../page/profile/children/children/address')), 'address')
 const add = r => require.ensure([], () => r(require('../page/profile/children/children/children/add')), 'add')
+const addDetail = r => require.ensure([], () => r(require('../page/profile/children/children/children/children/addDetail')),  'addDetail')
 
 export default [{
   path: '/',
@@ -89,6 +90,10 @@ export default [{
         children: [{
           path: 'add',
           component: add,
+          children: [{
+            path: 'addDetail',
+            component: addDetail
+          }]
         }]
       }]
     }, {
