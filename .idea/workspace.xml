@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2abdd24-328a-4dd6-937e-b75030ae3324" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vue-shop/src/page/find/find.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vue-shop/src/page/vipcard/vipcard.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue-shop/src/router/router.js" afterPath="$PROJECT_DIR$/vue-shop/src/router/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue-shop/src/store/mutation-types.js" afterPath="$PROJECT_DIR$/vue-shop/src/store/mutation-types.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue-shop/src/store/mutations.js" afterPath="$PROJECT_DIR$/vue-shop/src/store/mutations.js" />
-    </list>
+    <list default="true" id="f2abdd24-328a-4dd6-937e-b75030ae3324" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -63,8 +56,8 @@
       <file leaf-file-name="vipcard.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vue-shop/src/page/vipcard/vipcard.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2562">
-              <caret line="122" column="24" lean-forward="true" selection-start-line="122" selection-start-column="24" selection-end-line="122" selection-end-column="24" />
+            <state relative-caret-position="714">
+              <caret line="34" column="15" lean-forward="true" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
               <folding>
                 <element signature="e#2675#2723#0" expanded="true" />
               </folding>
@@ -549,12 +542,12 @@
       <workItem from="1490881500091" duration="5995000" />
       <workItem from="1490965762002" duration="439000" />
       <workItem from="1490966260312" duration="6080000" />
-      <workItem from="1491016768415" duration="4449000" />
+      <workItem from="1491016768415" duration="4963000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141011000" />
+    <option name="totallyTimeSpent" value="141525000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -972,8 +965,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vue-shop/src/page/vipcard/vipcard.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2562">
-          <caret line="122" column="24" lean-forward="true" selection-start-line="122" selection-start-column="24" selection-end-line="122" selection-end-column="24" />
+        <state relative-caret-position="714">
+          <caret line="34" column="15" lean-forward="true" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
           <folding>
             <element signature="e#2675#2723#0" expanded="true" />
           </folding>
