@@ -33,6 +33,8 @@ const commend = r => require.ensure([], () => r(require('../page/benefit/childre
 const points = r => require.ensure([], () => r(require('../page/points/points')), 'points')
 const pointsDetail = r => require.ensure([], () => r(require('../page/points/children/detail')), 'pointsDetail')
 const forget = r => require.ensure([], () => r(require('../page/forget/forget')), 'forget')
+const find = r => require.ensure([], () => r(require('../page/find/find')), 'find')
+const vipcard = r => require.ensure([], () => r(require('../page/vipcard/vipcard')), 'vipcard')
 
 
 export default [{
@@ -147,5 +149,13 @@ export default [{
     // 修改密码页
     path: 'forget',
     component: forget
+  }, {
+    // 发现页
+    path: 'find',
+    component: find
+  }, {
+    // vip卡片
+    path: '/vipcard',
+    component: vipcard
   }]
 }]

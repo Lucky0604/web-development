@@ -18,7 +18,9 @@ import {GET_USERINFO,
   RESET_NAME,
   SAVE_ADDRESS,
   ADD_ADDRESS,
-  SAVE_ADDDETAIL} from './mutation-types'
+  SAVE_ADDDETAIL,
+  ORDER_SUCCESS,
+  BUY_CART} from './mutation-types'
 
 import {getStore, setStore} from '../config/mUtils'
 
@@ -214,5 +216,16 @@ export default {
   // 添加地址详情
   [SAVE_ADDDETAIL](state, addAddress) {
     state.addAddress = addAddress;
+  },
+
+  // 下单成功，保存订单返回信息
+  [ORDER_SUCCESS](state, order) {
+    state.cartPrice = null;
+    state.orderMessage = order;
+  },
+
+  // 会员卡价格记录
+  [BUY_CART](state, price) {
+    state.cartPrice = price;
   }
 }
