@@ -10,7 +10,7 @@ var path = require('path')
 var express = require('express')
 var webpack = require('webpack')
 var proxyMiddleware = require('http-proxy-middleware')
-var webpackConfig = require('./webpack.dev.conf')
+var webpackConfig = process.env.NODE_ENV === 'testing' ? require('./webpack.prod.conf'): require('./webpack.dev.conf')
 
 // default port where dev server listens for incoming traffic
 var port = process.env.PORT || config.dev.port
@@ -25,7 +25,10 @@ var compiler = webpack(webpackConfig)
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
-  quiet: true
+  stats: {
+    colors: true,
+    chunks: false
+  }
 })
 
 var hotMiddleware = require('webpack-hot-middleware')(compiler, {
@@ -62,28 +65,14 @@ app.use(hotMiddleware)
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
 
-var uri = 'http://localhost:' + port
-
-var _resolve
-var readyPromise = new Promise(resolve => {
-  _resolve = resolve
-})
-
-console.log('> Starting dev server...')
-devMiddleware.waitUntilValid(() => {
-  console.log('> Listening at ' + uri + '\n')
-  // when env is testing, don't need open it
-  if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
+module.exports = app.listen(port, function (err) {
+  if (err) {
+    console.log(err)
+    return
+  }
+  var uri = 'http://localhost:' + port
+  console.log('Listening at ' + uri + '\n')
+  if (process.env.NODE_ENV !== 'testing') {
     opn(uri)
   }
-  _resolve()
 })
-
-var server = app.listen(port)
-
-module.exports = {
-  ready: readyPromise,
-  close: () => {
-    server.close()
-  }
-}
