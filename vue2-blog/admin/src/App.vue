@@ -1,14 +1,18 @@
 <template>
   <div id="app">
-    <img src="../src/assets/logo.png">
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app',
-};
+  import api from './store/api'
+  import {getDesc} from './utils/error'
+  export default {
+    name: 'app',
+
+  };
 </script>
 
 <style>
