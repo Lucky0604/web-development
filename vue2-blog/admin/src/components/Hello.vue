@@ -21,13 +21,16 @@
 </template>
 
 <script>
+  import http from 'src/service/http'
 export default {
   name: 'hello',
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      msg: '',
     };
   },
+  methods: {
+  }
 };
 </script>
 
