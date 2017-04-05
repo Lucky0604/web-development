@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="aside">
     <div class="panel">
       <div class="panel-heading" role="tab" id="headingSide">
         <a href="#collapseSide" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapseSide">
@@ -25,5 +25,8 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style>
+#aside {
+  height: inherit;
+}
 </style>

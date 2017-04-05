@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import headTop from '@/components/header/head'
-import mainContent from '@/components/mainContent/mainContent'
+import headTop from 'src/components/header/head'
+import mainContent from 'src/components/mainContent/mainContent'
 export default {
   name: 'dashboard',
   components: {
