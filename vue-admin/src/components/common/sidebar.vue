@@ -1,18 +1,21 @@
 <template>
   <div>
-    <div class="mu-item-wrapper">
-      <div class="mu-ripple-wrapper"></div>
-      <div class="mu-item">
-        <div class="mu-content">
+    <div class="panel">
+      <div class="panel-heading" role="tab" id="headingSide">
+        <a href="#collapseSide" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapseSide">
           Item 1
+        </a>
+      </div>
+      <div class="panel-collapse collapse" id="collapseSide" role="tabpanel" arialabelledby="headingSide">
+        <div class="panel-body">
+          <div class="btn-group-vertical">
+            <a href="#" class="btn btn-raised">Children item 1</a>
+            <a href="#" class="btn btn-raised">Children item 2</a>
+            <a href="#" class="btn btn-raised">Children item 3</a>
+          </div>
         </div>
       </div>
     </div>
-
-    <mu-list>
-      <mu-list-item>Children item</mu-list-item>
-      <mu-list-item>Children item</mu-list-item>
-    </mu-list>
   </div>
 </template>
 

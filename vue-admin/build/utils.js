@@ -1,3 +1,12 @@
+/**
+ * @Author: lucky
+ * @Date:   2017-04-05T10:24:05+08:00
+ * @Last modified by:   lucky
+ * @Last modified time: 2017-04-05T16:43:49+08:00
+ */
+
+
+
 var path = require('path')
 var config = require('../config')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -12,16 +21,8 @@ exports.assetsPath = function (_path) {
 exports.cssLoaders = function (options) {
   options = options || {}
 
-  var cssLoader = {
-    loader: 'css-loader',
-    options: {
-      minimize: process.env.NODE_ENV === 'production',
-      sourceMap: options.sourceMap
-    }
-  }
-
   // generate loader string to be used with extract text plugin
-  function generateLoaders (loader, loaderOptions) {
+  function generateLoaders (loaders) {
     var loaders = [cssLoader]
     if (loader) {
       loaders.push({

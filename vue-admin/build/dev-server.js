@@ -1,3 +1,12 @@
+/**
+ * @Author: lucky
+ * @Date:   2017-04-05T10:24:05+08:00
+ * @Last modified by:   lucky
+ * @Last modified time: 2017-04-05T16:24:36+08:00
+ */
+
+
+
 require('./check-versions')()
 
 var config = require('../config')
@@ -25,7 +34,10 @@ var compiler = webpack(webpackConfig)
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
-  quiet: true
+  stats: {
+    colors: true,
+    chunks: false
+  }
 })
 
 var hotMiddleware = require('webpack-hot-middleware')(compiler, {

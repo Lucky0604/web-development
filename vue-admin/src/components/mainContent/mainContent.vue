@@ -1,7 +1,9 @@
 <template>
   <div>
-    <div>
-      <side-bar></side-bar>
+    <div style="padding: 0; margin: 0;">
+      <div style="width: 20%;">
+        <side-bar></side-bar>
+      </div>
     </div>
   </div>
 </template>
