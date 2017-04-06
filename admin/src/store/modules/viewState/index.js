@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-06T16:28:49+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-06T16:30:58+08:00
+ * @Last modified time: 2017-04-06T23:12:10+08:00
  */
 
 
@@ -24,7 +24,8 @@ const state = {
     }
   ],
   // 从后台动态获取的侧导航栏信息
-  sideBarList: []
+  sideBarList: [],
+  userList: []
 }
 
 export default {

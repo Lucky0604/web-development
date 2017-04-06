@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-06T16:26:36+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-06T16:28:32+08:00
+ * @Last modified time: 2017-04-06T23:24:34+08:00
  */
 
 
@@ -23,5 +23,12 @@ export default {
   // 改变面包屑
   setBreadcrumbLevel: ({commit}, breadcrumbLevelObj) => {
     commit(types.SET_BREADCRUMB_LEVEL, breadcrumbLevelObj)
+  },
+  getList: ({commit}) => {
+    viewAPI.fetchList(
+      getList => {
+        commit(types.SET_LIST, {getList})
+      }
+    )
   }
 }
