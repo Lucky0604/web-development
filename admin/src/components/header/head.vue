@@ -44,17 +44,45 @@
 export default {
   data () {
     return {
-      logoTitle: '后台管理',
+      logoTitle: 'Admin',
       activeIndex: '1'
     }
   },
   methods: {
     handleSelect(key, keyPath) {
-      
+
     }
   }
 }
 </script>
 
 <style lang="css">
+#headerNav {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+#headerNav > .headerNav-logo {
+  float: left;
+  width: 200px;
+  height: 60px;
+  background-color: #1d8ce0;
+}
+#headerNav > .headerNav-logo > h3 {
+  color: #fff;
+}
+#headerNav > .headerNav-menu {
+  min-width: 760px;
+  margin-left: 200px;
+  height: 60px;
+}
+
+#headerNav > .headerNav-menu > el-menu {
+  display: flex;
+  justify-content: flex-end;
+}
+.material-icons {
+  font-size: 27px;
+  padding-top: 5px;
+}
 </style>

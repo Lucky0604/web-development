@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-06T12:16:35+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-06T12:41:36+08:00
+ * @Last modified time: 2017-04-06T16:33:54+08:00
  */
 
 
@@ -11,6 +11,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import store from './store/'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
@@ -22,6 +23,7 @@ Vue.use(ElementUI)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   template: '<App/>',
   components: { App }
