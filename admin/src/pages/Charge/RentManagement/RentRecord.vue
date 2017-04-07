@@ -1,9 +1,16 @@
 <template>
+  <!--
   <el-table :data="userList" border style="width: 100%">
     <el-table-column prop="username" label="日期" width="180"></el-table-column>
     <el-table-column prop="password" label="姓名" width="180"></el-table-column>
     <el-table-column prop="email" label="地址"></el-table-column>
   </el-table>
+-->
+<div>
+  <ul>
+    <li>{{userList}}</li>
+  </ul>
+</div>
 </template>
 
 <script>

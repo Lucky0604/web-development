@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-06T16:19:00+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-06T23:27:30+08:00
+ * @Last modified time: 2017-04-07T15:56:50+08:00
  */
 
 
@@ -23,10 +23,6 @@ export default {
     }
   },
   [types.SET_LIST](state, res_list) {
-    state.userList = []
-    let resArr = res_list.getList
-    for (let i = 0; i < resArr.length; i ++) {
-      state.userList.push(resArr[i])
-    }
+    state.userList = res_list
   }
 }
