@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-06T16:16:12+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-07T16:25:07+08:00
+ * @Last modified time: 2017-04-07T23:25:05+08:00
  */
 
 
@@ -19,8 +19,10 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 export const getAPISideBarList = (cb) => {
   axios.get('./static/api/viewAPI.json', {})
     .then(function(res) {
-      let getSideBarList = res.data.resultData
-      cb(getSideBarList)
+      // let getSideBarList = res.data.resultData
+      // cb(getSideBarList)
+      let sideBar = res.data.resultData
+      cb(sideBar)
     })
     .catch(function(err) {
       console.log(err)
@@ -30,8 +32,8 @@ export const getAPISideBarList = (cb) => {
 export const fetchList = (cb) => {
   axios.get('http://v2.mashupcloud.cn/LIST/User/', {params: {appid: 235, token: 'IupjzTcqIHzvRiMbjHjjfzYgyKPxvMFw'}})
     .then(function(res) {
-      let getList = res.data[2]
-      cb(getList)
+      let list = res.data[2]
+      cb(list)
     })
     .catch(function(err) {
       console.log(err)
