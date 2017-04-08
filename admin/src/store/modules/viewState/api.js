@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-06T16:16:12+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-07T23:25:05+08:00
+ * @Last modified time: 2017-04-09T00:33:44+08:00
  */
 
 
@@ -37,5 +37,18 @@ export const fetchList = (cb) => {
     })
     .catch(function(err) {
       console.log(err)
+    })
+}
+
+export const postUserData = (data) => {
+  axios.get('http://hw.mashupcloud.cn/ADD/User/', {
+    params: {
+      appid: 235,
+      token: 'IupjzTcqIHzvRiMbjHjjfzYgyKPxvMFw',
+      ...data
+    }
+  })
+    .then(function(res) {
+      console.log(res)
     })
 }
