@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-06T16:19:00+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-08T21:49:10+08:00
+ * @Last modified time: 2017-04-09T23:45:52+08:00
  */
 
 
@@ -36,5 +36,11 @@ export default {
     }
 
    // state.userList = res_list.list
+ },
+
+  [types.POST_LIST](state, userList) {
+   state.userList = state.userList.concat([userList])
+   console.log('---mutations---')
+   console.log(userList)
   }
 }

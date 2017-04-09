@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-06T16:16:12+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-09T00:33:44+08:00
+ * @Last modified time: 2017-04-09T22:32:13+08:00
  */
 
 
@@ -30,7 +30,12 @@ export const getAPISideBarList = (cb) => {
 }
 
 export const fetchList = (cb) => {
-  axios.get('http://v2.mashupcloud.cn/LIST/User/', {params: {appid: 235, token: 'IupjzTcqIHzvRiMbjHjjfzYgyKPxvMFw'}})
+  axios.get('http://v2.mashupcloud.cn/LIST/User/',
+  {params:
+    {appid: 235,
+     token: 'IupjzTcqIHzvRiMbjHjjfzYgyKPxvMFw'
+   }
+ })
     .then(function(res) {
       let list = res.data[2]
       cb(list)

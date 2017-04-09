@@ -16,7 +16,8 @@
 </template>
 
 <script>
-import {postUserData} from '@/store/modules/viewState/api.js'
+import {mapActions, mapGetters} from 'vuex'
+// import {postUserData} from '@/store/modules/viewState/api.js'
 export default {
   data () {
     return {
@@ -29,8 +30,15 @@ export default {
   },
   methods: {
     onSubmit() {
+      const userForm = this.userForm
+      console.log('------view--------')
+      console.log(userForm)
+      /*
       postUserData(this.userForm)
       this.$router.push('/RentRecord')
+      */
+     this.$store.dispatch('postList', userForm)
+     this.$router.push('/RentRecord')
     }
   }
 }
