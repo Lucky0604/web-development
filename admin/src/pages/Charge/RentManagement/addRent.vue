@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import {mapActions, mapGetters} from 'vuex'
+import {mapActions, mapGetters, mapMutations} from 'vuex'
 // import {postUserData} from '@/store/modules/viewState/api.js'
 export default {
   data () {
@@ -29,6 +29,9 @@ export default {
     }
   },
   methods: {
+    ...mapMutations([
+      'POST_LIST'
+    ]),
     onSubmit() {
       const userForm = this.userForm
       console.log('------view--------')

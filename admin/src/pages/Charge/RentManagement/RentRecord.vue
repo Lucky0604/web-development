@@ -6,6 +6,17 @@
     <el-table-column prop="username" label="日期" width="180"></el-table-column>
     <el-table-column prop="password" label="姓名" width="180"></el-table-column>
     <el-table-column prop="email" label="地址"></el-table-column>
+    <el-table-column label="操作" fixed="right">
+      <template scope="scope">
+        <el-button type="primary" size="small" width="100">
+          修改
+        </el-button>
+        <router-link :to="{path: 'RentRecord/rentDetail', query: {rentId}}">查看</router-link>
+
+
+        <el-button>删除</el-button>
+      </template>
+    </el-table-column>
   </el-table>
   <router-link to="/addRent">添加用户</router-link>
 </div>
@@ -16,8 +27,12 @@ import {mapActions, mapGetters} from 'vuex'
 export default {
   data () {
     return {
-      userListData: []
+      userListData: [],
+      rentId: null
     }
+  },
+  created() {
+    this.rentId = this.$route.query.id
   },
   mounted: function(){
     this.getUserList()

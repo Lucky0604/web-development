@@ -5,7 +5,7 @@
     </div>
     <div class="main-container">
       <bread-crumb></bread-crumb>
-      <router-view name="ContainerView"></router-view>
+      <router-view></router-view>
     </div>
   </div>
 </template>
