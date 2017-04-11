@@ -29,9 +29,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations([
-      'POST_LIST'
-    ]),
+    
     onSubmit() {
       const userForm = this.userForm
       console.log('------view--------')

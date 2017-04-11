@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-06T16:16:12+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-09T22:32:13+08:00
+ * @Last modified time: 2017-04-11T12:20:33+08:00
  */
 
 
@@ -56,4 +56,8 @@ export const postUserData = (data) => {
     .then(function(res) {
       console.log(res)
     })
+}
+
+export const fetchListById = (cb) => {
+  
 }

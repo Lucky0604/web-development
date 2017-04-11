@@ -2,31 +2,26 @@
  * @Author: lucky
  * @Date:   2017-04-06T12:16:35+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-10T23:53:43+08:00
+ * @Last modified time: 2017-04-11T13:39:31+08:00
  */
 
 
 
-import Vue from 'vue'
-import Router from 'vue-router'
+
 
 const home = r => require.ensure([], () => r(require('@/pages/home/Home')), 'home')
+
+// rentDetail
 const RentQuery = r => require.ensure([], () => r(require('@/pages/Charge/RentManagement/RentQuery')), 'RentQuery')
-/*
-const home = r => require.ensure([], () => r(require('@/pages/home/Home')), 'home')
-const home = r => require.ensure([], () => r(require('@/pages/home/Home')), 'home')
-const home = r => require.ensure([], () => r(require('@/pages/home/Home')), 'home')
-*/
-// 收费管理
-import RentRecord from '@/pages/Charge/RentManagement/RentRecord'
-import addRent from '@/pages/Charge/RentManagement/addRent'
-import rentDetail from '@/pages/Charge/RentManagement/rentDetail'
+const addRent = r => require.ensure([], () => r(require('@/pages/Charge/RentManagement/addRent')), 'addRent')
+const RentRecord = r => require.ensure([], () => r(require('@/pages/Charge/RentManagement/RentRecord')), 'RentRecord')
+const rentDetail = r => require.ensure([], () => r(require('@/pages/Charge/RentManagement/rentDetail')), 'rentDetail')
 
-Vue.use(Router)
 
-export default new Router({
-  routes: [
-    {
+
+
+export default [{
+
       path: '/',
       component: home,
       children: [
@@ -37,19 +32,22 @@ export default new Router({
         // 收费管理
         {
           path: '/RentQuery',
-          component: RentQuery
+          components: {Content: RentQuery}
         }, {
           path: '/RentRecord',
-          component: RentRecord,
-          children: [{
-            path: 'rentDetail',
-            component: rentDetail
-          }]
+          components: {
+            Content: RentRecord
+          }
         }, {
           path: '/addRent',
-          components: addRent
+          components: {Content:addRent}
+        }, {
+          path: '/RentRecord/rentDetail',
+          components: {
+            Content: rentDetail
+          }
         }
       ]
-    }
-  ]
-})
+
+
+}]

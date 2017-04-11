@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-06T16:26:36+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-09T23:48:14+08:00
+ * @Last modified time: 2017-04-11T13:22:53+08:00
  */
 
 
@@ -11,7 +11,12 @@ import * as viewAPI from './api'
 import * as types from './mutation-types'
 import axios from 'axios'
 
+const appid = 235
+const token = 'IupjzTcqIHzvRiMbjHjjfzYgyKPxvMFw'
+
 export default {
+
+
   // 获取导航栏'导航列表'
   getSideBarList: ({commit}) => {
 
@@ -64,7 +69,19 @@ export default {
       commit(types.POST_LIST, res)
       console.log(res.data[0])      // if post successfully, it output 'OK'
       console.log('------------------')
-      
+
     })
+ },
+ getListById: ({commit}, {id}) => {
+   axios.get(`http://v2.mashupcloud.cn/GET/User/${id}/`, {params: {
+     appid: 235,
+     token: 'IupjzTcqIHzvRiMbjHjjfzYgyKPxvMFw'
+   }})
+     .then(function(res) {
+       commit(types.FETCH_LIST_BY_ID, {list: res.data})
+     })
+     .catch(function(e) {
+       console.log(e)
+     })
  }
 }

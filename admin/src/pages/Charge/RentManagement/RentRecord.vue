@@ -11,9 +11,7 @@
         <el-button type="primary" size="small" width="100">
           修改
         </el-button>
-        <router-link :to="{path: 'RentRecord/rentDetail', query: {rentId}}">查看</router-link>
-
-
+        <el-button size="small" width="100" @click="handleClick(scope.$index + 1)">查看</el-button>
         <el-button>删除</el-button>
       </template>
     </el-table-column>
@@ -24,15 +22,15 @@
 
 <script>
 import {mapActions, mapGetters} from 'vuex'
+import axios from 'axios'
 export default {
   data () {
     return {
       userListData: [],
-      rentId: null
+      id: null
     }
   },
   created() {
-    this.rentId = this.$route.query.id
   },
   mounted: function(){
     this.getUserList()
@@ -42,11 +40,29 @@ export default {
       this.$store.dispatch({
         type: 'getList'
       })
+    },
+    handleClick(id) {
+      /*
+      axios.get(`http://v2.mashupcloud.cn/GET/User/${id}/`, {
+        params: {
+          appid: 235,
+          token: 'IupjzTcqIHzvRiMbjHjjfzYgyKPxvMFw'
+        }
+      })
+      .then(function(res) {
+        console.log('------handleClick------')
+        console.log(res.data)
+      })
+      */
+     this.$store.dispatch('getListById', {id: id})
+     this.$router.push('RentRecord/rentDetail')
     }
   },
-  computed: mapGetters({
-    get_userList: 'get_userList'
-  }),
+  computed: {
+    ...mapGetters({
+      get_userList: 'get_userList'
+    })
+  },
   watch: {
     get_userList: function() {
       this.$data.userListData = this.$store.state.viewState.userList
