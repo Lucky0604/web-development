@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-06T16:26:36+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-11T17:02:54+08:00
+ * @Last modified time: 2017-04-11T17:47:08+08:00
  */
 
 
@@ -95,6 +95,19 @@ export default {
     .then(function(res) {
       commit(types.DELETE_LIST_BY_ID, res.data)
       console.log(res)
+    })
+ },
+
+ editListById: ({commit}, {id}, body) => {
+   axios.get(`http://v2.mashupcloud.cn/EDIT/User/${id}/`, {
+     params: {
+       appid: 235,
+       token: 'IupjzTcqIHzvRiMbjHjjfzYgyKPxvMFw',
+       ...body
+     }
+   })
+    .then(function(res) {
+      commit(types.EDIT_LIST_BY_ID, res)
     })
  }
 }
