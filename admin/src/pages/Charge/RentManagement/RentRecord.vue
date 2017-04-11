@@ -12,7 +12,7 @@
           修改
         </el-button>
         <el-button size="small" width="100" @click="handleClick(scope.row.id)">查看</el-button>
-        <el-button>删除</el-button>
+        <el-button size="small" @click="handleDelete(scope.row.id, scope.$index)">删除</el-button>
       </template>
     </el-table-column>
   </el-table>
@@ -41,6 +41,13 @@ export default {
       this.$store.dispatch({
         type: 'getList'
       })
+    },
+    handleDelete(id, index) {
+      this.$store.dispatch('deleteListById', {id: id})
+        .then(() => {
+          this.userListData.splice(index, 1)
+          console.log(index)
+        })
     },
     handleClick(id) {
       /*

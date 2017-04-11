@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-06T16:26:36+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-11T13:22:53+08:00
+ * @Last modified time: 2017-04-11T17:02:54+08:00
  */
 
 
@@ -83,5 +83,18 @@ export default {
      .catch(function(e) {
        console.log(e)
      })
+ },
+
+ deleteListById: ({commit}, {id}) => {
+   axios.get(`http://hw.mashupcloud.cn/DELETE/User/${id}/`, {
+     params: {
+       appid: 235,
+       token: 'IupjzTcqIHzvRiMbjHjjfzYgyKPxvMFw'
+     }
+   })
+    .then(function(res) {
+      commit(types.DELETE_LIST_BY_ID, res.data)
+      console.log(res)
+    })
  }
 }

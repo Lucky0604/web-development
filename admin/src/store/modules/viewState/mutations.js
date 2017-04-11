@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-06T16:19:00+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-11T14:40:13+08:00
+ * @Last modified time: 2017-04-11T17:04:32+08:00
  */
 
 
@@ -48,5 +48,9 @@ export default {
    console.log('-------FETCH_LIST_BY_ID-------')
    state.userDetail = obj.list[1]
    console.log(state.userDetail)
+ },
+
+ [types.DELETE_LIST_BY_ID](state, userList) {
+   console.log(userList)
  }
 }
