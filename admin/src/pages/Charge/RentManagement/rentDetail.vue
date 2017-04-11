@@ -17,9 +17,6 @@ export default {
     }
   },
   computed: {
-    ...mapState([
-      'userDetail'
-    ]),
     ...mapGetters({
       get_userById: 'get_userById'
     })

@@ -3,19 +3,20 @@
 
 
   <el-table :data="userListData" border style="width: 100%">
-    <el-table-column prop="username" label="日期" width="180"></el-table-column>
-    <el-table-column prop="password" label="姓名" width="180"></el-table-column>
-    <el-table-column prop="email" label="地址"></el-table-column>
-    <el-table-column label="操作" fixed="right">
+    <el-table-column label="日期" width="180" prop="username"></el-table-column>
+    <el-table-column label="姓名" width="180" prop="password"></el-table-column>
+    <el-table-column label="地址" prop="email"></el-table-column>
+    <el-table-column label="操作" fixed="right" prop="id">
       <template scope="scope">
         <el-button type="primary" size="small" width="100">
           修改
         </el-button>
-        <el-button size="small" width="100" @click="handleClick(scope.$index + 1)">查看</el-button>
+        <el-button size="small" width="100" @click="handleClick(scope.row.id)">查看</el-button>
         <el-button>删除</el-button>
       </template>
     </el-table-column>
   </el-table>
+
   <router-link to="/addRent">添加用户</router-link>
 </div>
 </template>
