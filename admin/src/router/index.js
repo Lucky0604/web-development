@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-06T12:16:35+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-11T13:39:31+08:00
+ * @Last modified time: 2017-04-11T22:13:11+08:00
  */
 
 
@@ -16,7 +16,7 @@ const RentQuery = r => require.ensure([], () => r(require('@/pages/Charge/RentMa
 const addRent = r => require.ensure([], () => r(require('@/pages/Charge/RentManagement/addRent')), 'addRent')
 const RentRecord = r => require.ensure([], () => r(require('@/pages/Charge/RentManagement/RentRecord')), 'RentRecord')
 const rentDetail = r => require.ensure([], () => r(require('@/pages/Charge/RentManagement/rentDetail')), 'rentDetail')
-
+const editRent = r => require.ensure([], () => r(require('@/pages/Charge/RentManagement/editRent')), 'editRent')
 
 
 
@@ -45,6 +45,11 @@ export default [{
           path: '/RentRecord/rentDetail',
           components: {
             Content: rentDetail
+          }
+        }, {
+          path: '/RentRecord/editRent',
+          components: {
+            Content: editRent
           }
         }
       ]

@@ -8,7 +8,7 @@
     <el-table-column label="地址" prop="email"></el-table-column>
     <el-table-column label="操作" fixed="right" prop="id">
       <template scope="scope">
-        <el-button type="primary" size="small" width="100">
+        <el-button type="primary" size="small" width="100" @click="handleEdit(scope.row.id)">
           修改
         </el-button>
         <el-button size="small" width="100" @click="handleClick(scope.row.id)">查看</el-button>
@@ -41,6 +41,10 @@ export default {
       this.$store.dispatch({
         type: 'getList'
       })
+    },
+    handleEdit(id) {
+      this.$store.dispatch('getListById', {id: id})
+      this.$router.push('RentRecord/editRent')
     },
     handleDelete(id, index) {
       this.$store.dispatch('deleteListById', {id: id})
