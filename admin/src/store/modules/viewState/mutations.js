@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-06T16:19:00+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-11T23:21:43+08:00
+ * @Last modified time: 2017-04-12T10:44:40+08:00
  */
 
 
@@ -54,7 +54,7 @@ export default {
    console.log(userList)
  },
  [types.EDIT_LIST_BY_ID](state, userList) {
-   // state.userList = Object.assign({}, state.userList, {userList})
+   // state.userList = Object.assign({}, state.userDetail, {userList})
    console.log('----mutation----EDIT_LIST_BY_ID---------')
    console.log(userList)
  }

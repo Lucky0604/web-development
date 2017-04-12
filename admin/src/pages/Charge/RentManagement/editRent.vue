@@ -16,31 +16,53 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import {mapGetters, mapState} from 'vuex'
+import axios from 'axios'
 export default {
   data() {
     return {
       userDetail: []
-
     }
   },
   computed: {
 
     ...mapGetters({
       get_userById: 'get_userById'
-    })
+    }),
+
+
   },
   methods: {
     handleSubmit(id) {
-      this.$store.dispatch('editListById', {id}, this.userDetail)
+      const userDetail = this.userDetail
+      // this.$store.dispatch('editListById', {id}, userDetail)
+      this.$store.dispatch('editListById', {id, userDetail})
       console.log('-------edit rent view---------')
-      console.log(this.userDetail)
+      console.log(userDetail)
+      this.$router.go('-1')
+
+      /*
+      const userDetail = this.userDetail
+      axios.get(`http://v2.mashupcloud.cn/EDIT/User/${id}/`, {
+        params: {
+          appid: 235,
+          token: 'IupjzTcqIHzvRiMbjHjjfzYgyKPxvMFw',
+          ...userDetail
+        }
+      })
+        .then(function(res) {
+          console.log(res)
+
+        })
+        this.$router.go('-1')
+        */
     }
   },
   watch: {
     get_userById: function() {
       this.$data.userDetail = this.$store.state.viewState.userDetail
     }
+
   }
 }
 </script>

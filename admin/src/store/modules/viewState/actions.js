@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-06T16:26:36+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-11T23:23:52+08:00
+ * @Last modified time: 2017-04-12T11:36:03+08:00
  */
 
 
@@ -98,20 +98,21 @@ export default {
     })
  },
 
- editListById: ({commit}, {id}, body) => {
+ // editListById: ({commit}, {id}, userDetail)
+ editListById: ({commit}, {id, userDetail}) => {
    axios.get(`http://v2.mashupcloud.cn/EDIT/User/${id}/`, {
      params: {
        appid: 235,
        token: 'IupjzTcqIHzvRiMbjHjjfzYgyKPxvMFw',
-       ...body
+       ...userDetail
      }
    })
     .then(function(res) {
-      commit(types.EDIT_LIST_BY_ID, res)
+      commit(types.EDIT_LIST_BY_ID, userDetail)
       console.log('-------EDIT_LIST_BY_ID-------')
       console.log('res: ', res)
       console.log('id: ',id)
-      console.log('body : ', body)
+      console.log('userDetail : ', userDetail)
     })
  }
 }
