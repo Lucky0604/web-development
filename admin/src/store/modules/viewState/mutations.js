@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-06T16:19:00+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-12T10:44:40+08:00
+ * @Last modified time: 2017-04-12T16:16:29+08:00
  */
 
 
@@ -39,10 +39,10 @@ export default {
  },
 
   [types.POST_LIST](state, userList) {
-   state.userList = state.userList.concat([userList])
-   console.log('---mutations---')
-   console.log(userList)
- },
+    state.userList = state.userList.concat([userList])
+    console.log('---mutations---')
+    console.log(userList)
+  },
 
  [types.FETCH_LIST_BY_ID](state, obj) {
    console.log('-------FETCH_LIST_BY_ID-------')

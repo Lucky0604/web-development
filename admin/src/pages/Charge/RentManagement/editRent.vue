@@ -29,8 +29,6 @@ export default {
     ...mapGetters({
       get_userById: 'get_userById'
     }),
-
-
   },
   methods: {
     handleSubmit(id) {
