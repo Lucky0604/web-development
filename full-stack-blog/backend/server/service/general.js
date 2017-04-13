@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-13T14:42:49+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-13T15:08:37+08:00
+ * @Last modified time: 2017-04-13T15:13:03+08:00
  */
 
 
@@ -82,13 +82,33 @@ exports.deleteItem = async (ctx, mongoDB) => {
 }
 
 /**
- * 公用根据id编辑单个item方法
- * @method editItem
+ * 公用根据id更新单个item方法
+ * @method modifyItem
+ * @param ctx
+ * @param mongoDB
+ * @param id
+ * @param data
+ * @return
+ */
+exports.modifyItem = (ctx, mongoDB, id, data) => {
+  try {
+    const result = await mongoDB.findOneAndUpdateAsync({_id: id}, data, {new: true})
+    ctx.success(result, '更新成功')
+  } catch(err) {
+    ctx.error(err.toString())
+  }
+}
+
+
+
+/**
+ * 公用单个item方法
+ * @method recoverItem
  * @param ctx
  * @param mongoDB
  * @return
  */
-exports.editItem = async (ctx, mongoDB) => {
+exports.recoverItem = async (ctx, mongoDB) => {
   var id = ctx.query.id
   try {
     await mongoDB.updateAsync({_id: id}, {is_delete: 0})
