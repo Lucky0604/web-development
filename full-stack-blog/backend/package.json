@@ -5,6 +5,9 @@
   "main": "app.js",
   "author": "lucky",
   "license": "MIT",
+  "scripts": {
+    "start": "./node_modules/.bin/nodemon bin/run"
+  },
   "dependencies": {
     "debug": "^2.6.3",
     "ejs": "^2.5.6",

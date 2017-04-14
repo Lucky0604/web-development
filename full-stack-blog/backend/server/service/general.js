@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-13T14:42:49+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-13T15:13:03+08:00
+ * @Last modified time: 2017-04-14T18:11:03+08:00
  */
 
 
@@ -26,7 +26,7 @@ exports.list = async (ctx, mongoDB, sort) => {
   var skip = (page - 1) * limit
   try {
     const [list, total] = await Promise.all([
-      mongoDB.find().sort(sort).skip(skip).limit(limit).exec()
+      mongoDB.find().sort(sort).skip(skip).limit(limit).exec(),
       mongoDB.countAsync()
     ])
     var totalPage = Math.ceil(total / limit)
