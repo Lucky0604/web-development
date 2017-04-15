@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-13T14:41:00+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-13T16:14:01+08:00
+ * @Last modified time: 2017-04-15T11:57:02+08:00
  */
 
 
@@ -94,7 +94,7 @@ exports.addAdmin = async ctx => {
   var email = ctx.request.body.email
   var password = ctx.request.body.password
   var username = ctx.request.body.username
-  cost payload = {}
+  const payload = {}
 
   if (fsExistsSync('./admin.lock')) {
     payload.message = '请先删除admin.lock'

@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-14T17:23:26+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-14T17:46:53+08:00
+ * @Last modified time: 2017-04-15T12:00:09+08:00
  */
 
 
@@ -41,7 +41,7 @@ router.post('/article/modifyItem', isAdmin, backendArticle.modifyItem)
 // 管理员获取分类列表
 router.get('/category/list', backendCategory.getList)
 // 管理员获取单个分类
-router.get('/category/item', backendCategory.listItem)
+router.get('/category/item', backendCategory.getItem)
 // 管理员添加分类
 router.post('/category/add', isAdmin, backendCategory.addItem)
 // 管理员删除分类
@@ -53,17 +53,17 @@ router.post('/category/modify', isAdmin, backendCategory.modifyItem)
 
 // -----------管理员管理------------
 // 管理员登录
-router.post('/admin/login', backendUser.login)
+router.post('/admin/login', backendUser.loginAdmin)
 // 管理员列表
 router.get('/admin/list', isAdmin, backendUser.getList)
 // 获取单个管理员
 router.get('/admin/item', isAdmin, backendUser.getItem)
 // 编辑管理员
-router.post('/admin/modify', isAdmin, backendUser.modifyItem)
+router.post('/admin/modify', isAdmin, backendUser.modifyAdmin)
 // 删除管理员
-router.get('/admin/delete', isAdmin, backendUser.deleteItem)
+router.get('/admin/delete', isAdmin, backendUser.deleteAdmin)
 // 恢复管理员
-router.get('/admin/recover', isAdmin, backendUser.recoverItem)
+router.get('/admin/recover', isAdmin, backendUser.recoverAdmin)
 
 // -------------用户管理------------
 // 获取用户列表

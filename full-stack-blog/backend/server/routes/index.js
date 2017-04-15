@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-14T17:47:10+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-14T17:49:14+08:00
+ * @Last modified time: 2017-04-15T12:00:50+08:00
  */
 
 
@@ -20,7 +20,7 @@ router.get('/backend', async ctx => {
   }
   await ctx.render('admin-add', {})
 })
-router.post('/backend', backendUser.addItem)
+router.post('/backend', backendUser.addAdmin)
 
 router.use('/api/backend', backend.routes(), backend.allowedMethods())
 

@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-13T14:42:49+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-14T18:11:03+08:00
+ * @Last modified time: 2017-04-15T11:56:37+08:00
  */
 
 
@@ -90,7 +90,7 @@ exports.deleteItem = async (ctx, mongoDB) => {
  * @param data
  * @return
  */
-exports.modifyItem = (ctx, mongoDB, id, data) => {
+exports.modifyItem = async (ctx, mongoDB, id, data) => {
   try {
     const result = await mongoDB.findOneAndUpdateAsync({_id: id}, data, {new: true})
     ctx.success(result, '更新成功')
