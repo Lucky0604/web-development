@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-13T12:18:10+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-14T18:00:41+08:00
+ * @Last modified time: 2017-04-15T12:26:19+08:00
  */
 
 
@@ -33,9 +33,10 @@ app.use(convert(json()))
 app.use(convert(logger()))
 app.use(convert(require('koa-static')(path.join(__dirname, 'public'))))
 
-app.use(views(path.join(__dirname, 'views'), {extensions: 'ejs'}))
+app.use(views(path.join(__dirname, 'views'), {extension: 'ejs'}))
 
 // logger
+
 app.use(async(ctx, next) => {
   const start = new Date()
   await next()
@@ -52,6 +53,7 @@ app.use(async(ctx, next) => {
     }
   }
 })
+
 
 app.use(require('./server/middlewares/return'))
 

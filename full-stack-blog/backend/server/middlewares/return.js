@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-13T14:38:24+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-13T14:39:52+08:00
+ * @Last modified time: 2017-04-15T13:08:38+08:00
  */
 
 
@@ -24,4 +24,7 @@ module.exports = async (ctx, next) => {
       data
     }
   }
+
+  // 若不添加如下代码，无法访问到路径
+  await next()
 }
