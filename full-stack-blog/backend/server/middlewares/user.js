@@ -2,14 +2,14 @@
  * @Author: lucky
  * @Date:   2017-04-13T13:19:11+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-13T13:26:48+08:00
+ * @Last modified time: 2017-04-15T13:37:27+08:00
  */
 
 
 
 var check = require('./check')
 
-module.exports = async(ctx, next) {
+module.exports = async(ctx, next) => {
   // 从cookies中获取用户的token
   var token = ctx.cookies.get('user')
   // 从cookies中获取用户id

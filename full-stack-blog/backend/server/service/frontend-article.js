@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-14T16:28:19+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-14T17:00:52+08:00
+ * @Last modified time: 2017-04-15T13:36:23+08:00
  */
 
 
@@ -36,7 +36,7 @@ exports.getList = async ctx => {
   }
   if (key) {
     var reg = new RegExp(key, 'i')
-    data.title = ($regex: reg)
+    data.title = {$regex: reg}
   }
   var sort = '-update_date'
   if (by) {
