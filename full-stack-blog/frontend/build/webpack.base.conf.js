@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-15T13:47:18+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-16T12:05:44+08:00
+ * @Last modified time: 2017-04-16T18:31:41+08:00
  */
 
 
@@ -17,6 +17,7 @@ var isProd = process.env.NODE_ENV === 'production'
 var cssSourceMapDev = (!isProd && config.dev.cssSourceMap)
 var cssSourceMapProd = (isProd && config.build.productionSourceMap)
 var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
+
 
 module.exports = {
   performance: {
@@ -40,17 +41,22 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.vue'],
+
     modules: [
       path.join(__dirname, '../node_modules')
     ],
+
     alias: {
+
       '~src': path.resolve(__dirname, '../src'),
       '~components': path.resolve(__dirname, '../src/components'),
-      '~api': path.resolve(__dirname, '../src/api/index-client'),
+      '~api': path.resolve(__dirname, '../src/service/index-client'),
       '~pages': path.resolve(__dirname, '../src/pages'),
       '~store': path.resolve(__dirname, '../src/store'),
       '~utils': path.resolve(__dirname, '../src/utils'),
-      'api-config': path.resolve(__dirname, '../src/api/config-client')
+      'api-config': path.resolve(__dirname, '../src/service/config-client')
+
+
     }
   },
   resolveLoader: {
@@ -78,7 +84,9 @@ module.exports = {
       */
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
+        include: projectRoot,
+        exclude: /node_modules/
       },
       {
         test: /\.js$/,
