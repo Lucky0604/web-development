@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-15T13:47:18+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-16T11:23:52+08:00
+ * @Last modified time: 2017-04-16T12:05:44+08:00
  */
 
 
@@ -25,7 +25,7 @@ module.exports = {
   },
   entry: {
     app: './src/app.js',
-    admin: '/src/admin.js',
+    admin: './src/admin.js',
     vendor: ['./src/polyfill']
   },
   output: {
@@ -50,7 +50,7 @@ module.exports = {
       '~pages': path.resolve(__dirname, '../src/pages'),
       '~store': path.resolve(__dirname, '../src/store'),
       '~utils': path.resolve(__dirname, '../src/utils'),
-      'api-config': path.reslove(__dirname, '../src/api/config-client')
+      'api-config': path.resolve(__dirname, '../src/api/config-client')
     }
   },
   resolveLoader: {
@@ -60,6 +60,7 @@ module.exports = {
   },
   module: {
     rules: [
+      /**
       {
         test: /\.vue$/,
         loader: 'eslint-loader',
@@ -70,10 +71,11 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'eslint-loader',
-        enforce: 'pre'
+        enforce: 'pre',
         include: projectRoot,
         exclude: /node_modules/
       },
+      */
       {
         test: /\.vue$/,
         loader: 'vue-loader'
@@ -97,7 +99,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath('img/[name].[hash:7].[ext]')
+          name: 'staticimg/[name].[hash:7].[ext]'
         }
       },
       {
@@ -105,7 +107,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+          name: 'static/fonts/[name].[hash:7].[ext]'
         }
       }
     ]
