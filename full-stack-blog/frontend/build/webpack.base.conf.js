@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-15T13:47:18+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-16T18:31:41+08:00
+ * @Last modified time: 2017-04-17T15:14:15+08:00
  */
 
 
@@ -47,7 +47,6 @@ module.exports = {
     ],
 
     alias: {
-
       '~src': path.resolve(__dirname, '../src'),
       '~components': path.resolve(__dirname, '../src/components'),
       '~api': path.resolve(__dirname, '../src/service/index-client'),
@@ -55,8 +54,6 @@ module.exports = {
       '~store': path.resolve(__dirname, '../src/store'),
       '~utils': path.resolve(__dirname, '../src/utils'),
       'api-config': path.resolve(__dirname, '../src/service/config-client')
-
-
     }
   },
   resolveLoader: {

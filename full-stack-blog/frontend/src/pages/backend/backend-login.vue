@@ -21,6 +21,7 @@
 </template>
 
 <script lang="babel">
+
 import cookies from 'js-cookie'
 import api from '~api'
 import aInput from '~components/_input.vue'
@@ -45,7 +46,19 @@ export default {
     aInput
   },
   methods: {
+    async login() {
+      if (!this.form.username || !this.form.password) {
+        //this.$store.dispatch('global/showMsg', '请输入用户名和密码')
+        return
+      }
+      
+      const {data: {data, code}} = await api.post('backend/admin/login', this.form)
+      if (data && code === 200) {
+        this.$router.replace('/backend/article/list')
+      }
 
+    }
   }
 }
+
 </script>

@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-16T13:22:48+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-16T13:32:56+08:00
+ * @Last modified time: 2017-04-17T15:52:04+08:00
  */
 
 
@@ -17,7 +17,7 @@ export default {
   ['gProgress']({commit}, payload) {
     commit(types.PROGRESS, payload)
   },
-  ['showMessage']({commit}, config) {
+  ['showMsg']({commit}, config) {
     let content, type
     if (typeof config === 'string') {
       content = config
