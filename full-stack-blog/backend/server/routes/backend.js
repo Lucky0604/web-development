@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-14T17:23:26+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-15T12:00:09+08:00
+ * @Last modified time: 2017-04-18T10:05:13+08:00
  */
 
 
@@ -35,7 +35,6 @@ router.get('/article/delete', isAdmin, backendArticle.deleteItem)
 router.get('/article/recoverItem', isAdmin, backendArticle.recoverItem)
 // 管理员编辑文章
 router.post('/article/modifyItem', isAdmin, backendArticle.modifyItem)
-
 
 // ----------分类管理---------------
 // 管理员获取分类列表

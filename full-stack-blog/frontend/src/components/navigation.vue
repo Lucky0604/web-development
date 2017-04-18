@@ -42,14 +42,14 @@ export default {
   },
   methods: {
     login() {
-      //
+      this.$store.commit('global/SHOW_LOGIN_MODAL', true)
     },
     search(e) {
       var qs = e.target.value
       if (qs === '') {
         return false
       }
-      // this.$router.replace('')
+      this.$router.replace('/search/' + qs)
     }
   }
 }

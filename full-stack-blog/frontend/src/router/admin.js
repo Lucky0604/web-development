@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-16T11:56:10+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-17T15:50:00+08:00
+ * @Last modified time: 2017-04-18T12:30:42+08:00
  */
 
 
@@ -13,6 +13,8 @@ import cookies from 'js-cookie'
 import {inBrowser} from '../utils'
 
 import login from '../pages/backend/backend-login.vue'
+// --------------admin user------------------
+import adminList from '../pages/backend/backend-admin-list.vue'
 
 Vue.use(VueRouter)
 
@@ -48,6 +50,12 @@ const router = new VueRouter({
       name: 'login',
       path: '/backend',
       component: login
+    }, {
+      name: 'admin_list',
+      path: '/backend/admin/list',
+      component: adminList,
+      meta: {scrollToTop: true},
+      beforeEnter: guardRoute
     }
   ]
 })

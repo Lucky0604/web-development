@@ -1,0 +1,87 @@
+<template>
+  <div class="settings-main card">
+    <div class="settings-main-content">
+      <div class="list-section list-header">
+        <div class="list-username">
+          Username
+        </div>
+        <div class="list-email">
+          Email
+        </div>
+        <div class="list-date">
+          Date
+        </div>
+        <div class="list-action">
+          Action
+        </div>
+      </div>
+      <div class="list-section" v-for="item in admin.data">
+        <div class="list-username">
+          {{item.username}}
+        </div>
+        <div class="list-email">
+          {{item.email}}
+        </div>
+        <div class="list-date">
+          {{item.update_date | timeYmd}}
+        </div>
+        <div class="list-action">
+          <router-link :to="'/backend/admin/modifyItem/' + item._id" class="badge badge-success">Edit</router-link>
+          <a href="javascript:;" v-if="item.is_delete" @click="recoverItem(item._id)">Recover</a>
+          <a href="javascript:;" v-else @click = "deleteItem(item._id)">Delete</a>
+        </div>
+      </div>
+    </div>
+    <div class="settings-footer clearfix" v-if="admin.hasNext">
+      <a href="javascript:;" class="admin-load-more" @click="loadMore()">Load More...</a>
+    </div>
+  </div>
+</template>
+
+<script>
+import api from '~api'
+import {mapGetters} from 'vuex'
+
+const fetchInitialData = async (store, config = {page: 1}) => {
+  await store.dispatch('backend/admin/getAdminList', config)
+}
+
+export default {
+  name: 'backend-admin-list',
+  computed: {
+    ...mapGetters({
+      admin: 'backend/admin/getAdminList'
+    })
+  },
+  methods: {
+    loadMore(page = this.admin.page + 1) {
+      fetchInitialData(this.$store, {page})
+    },
+    async recoverItem(id) {
+      const {data: {code, message}} = await api.get('backend/admin/recover', {id})
+      if (code === 200) {
+        this.$store.dispatch('global/showMsg', {
+          type: 'success',
+          content: message
+        })
+        this.$store.commit('backend/admin/RECOVER_ADMIN', id)
+      }
+    },
+    async deleteItem(id) {
+      const {data: {code, message}} = await api.get('backend/admin/delete', {id})
+      if (code === 200) {
+        this.$store.dispatch('global/showMsg', {
+          type: 'success',
+          content: message
+        })
+        this.$store.commit('backend/admin/DELETE_ADMIN', id)
+      }
+    }
+  },
+  mounted() {
+    if (this.admin.data.length <= 0) {
+      fetchInitialData(this.$store)
+    }
+  }
+}
+</script>
