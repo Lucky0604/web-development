@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-16T11:56:10+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-18T17:35:23+08:00
+ * @Last modified time: 2017-04-18T18:00:15+08:00
  */
 
 
@@ -19,6 +19,7 @@ import adminModify from '../pages/backend/backend-admin-modify.vue'
 
 // --------------- user ------------------
 import userList from '../pages/backend/backend-user-list.vue'
+import userModify from '../pages/backend/backend-user-modify.vue'
 
 // ----------------category------------------
 import categoryAdd from '../pages/backend/backend-category-add.vue'
@@ -73,6 +74,12 @@ const router = new VueRouter({
       name: 'user_list',
       path: '/backend/user/list',
       component: userList,
+      meta: {scrollToTop: true},
+      beforeEnter: guardRoute
+    }, {
+      name: 'user_modify',
+      path: '/backend/user/modifyItem',
+      component: userModify,
       meta: {scrollToTop: true},
       beforeEnter: guardRoute
     }, {
