@@ -2,7 +2,7 @@
  * @Author: lucky
  * @Date:   2017-04-16T11:56:10+08:00
  * @Last modified by:   lucky
- * @Last modified time: 2017-04-18T13:10:12+08:00
+ * @Last modified time: 2017-04-18T15:43:54+08:00
  */
 
 
@@ -16,6 +16,9 @@ import login from '../pages/backend/backend-login.vue'
 // --------------admin user------------------
 import adminList from '../pages/backend/backend-admin-list.vue'
 import adminModify from '../pages/backend/backend-admin-modify.vue'
+
+// --------------- user ------------------
+import userList from '../pages/backend/backend-user-list.vue'
 
 Vue.use(VueRouter)
 
@@ -61,6 +64,12 @@ const router = new VueRouter({
       name: 'admin_modify',
       path: '/backend/admin/modifyItem/:id',
       component: adminModify,
+      meta: {scrollToTop: true},
+      beforeEnter: guardRoute
+    }, {
+      name: 'user_list',
+      path: '/backend/user/list',
+      component: userList,
       meta: {scrollToTop: true},
       beforeEnter: guardRoute
     }
