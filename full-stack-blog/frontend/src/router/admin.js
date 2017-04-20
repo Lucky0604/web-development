@@ -26,6 +26,9 @@ import categoryAdd from '../pages/backend/backend-category-add.vue'
 import categoryModify from '../pages/backend/backend-category-modify.vue'
 import categoryList from '../pages/backend/backend-category-list.vue'
 
+// ----------------article------------------
+import articleAdd from '../pages/backend/backend-article-add.vue'
+
 Vue.use(VueRouter)
 
 
@@ -100,6 +103,12 @@ const router = new VueRouter({
       name: 'category_list',
       path: '/backend/category/list',
       component: categoryList,
+      meta: {scrollToTop: true},
+      beforeEnter: guardRoute
+    }, {
+      name: 'article_add',
+      path: '/backend/article/add',
+      component: articleAdd,
       meta: {scrollToTop: true},
       beforeEnter: guardRoute
     }

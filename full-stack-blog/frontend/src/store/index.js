@@ -15,6 +15,7 @@ import global from './modules/global'
 // backend modules
 import backendAdmin from './modules/backend/backendAdmin'
 import backendUser from './modules/backend/backendUser'
+import backendArticle from './modules/backend/backendArticle'
 
 // global modules
 import globalCategory from './modules/global/globalCategory'
@@ -34,7 +35,8 @@ export default new Vuex.Store({
       namespaced: true,
       modules: {
         admin: backendAdmin,
-        user: backendUser
+        user: backendUser,
+        article: backendArticle
       }
     }
   }

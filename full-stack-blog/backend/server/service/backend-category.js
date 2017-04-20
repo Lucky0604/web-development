@@ -27,7 +27,7 @@ exports.getList = async ctx => {
   try {
     const result = await Category.find().sort('-cate_order').exec()
     ctx.success({
-      listItem: result
+      list: result
     })
   } catch(err) {
     ctx.error(err.toString())
