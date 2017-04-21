@@ -19,6 +19,7 @@ import backendArticle from './modules/backend/backendArticle'
 
 // global modules
 import globalCategory from './modules/global/globalCategory'
+import globalComment from './modules/global/globalComment'
 
 Vue.use(Vuex)
 
@@ -28,7 +29,8 @@ export default new Vuex.Store({
       namespaced: true,
       ...global,
       modules: {
-        category: globalCategory
+        category: globalCategory,
+        comment: globalComment
       }
     },
     backend: {

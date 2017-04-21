@@ -30,6 +30,7 @@ import categoryList from '../pages/backend/backend-category-list.vue'
 import articleAdd from '../pages/backend/backend-article-add.vue'
 import articleList from '../pages/backend/backend-article-list.vue'
 import articleModify from '../pages/backend/backend-article-modify.vue'
+import articleComment from '../pages/backend/backend-article-comment.vue'
 
 Vue.use(VueRouter)
 
@@ -123,6 +124,12 @@ const router = new VueRouter({
       name: 'article_modify',
       path: '/backend/article/modify/:id',
       component: articleModify,
+      meta: {scrollToTop: true},
+      beforeEnter: guardRoute
+    }, {
+      name: 'article_comment',
+      path: '/backend/article/comment/:id',
+      component: articleComment,
       meta: {scrollToTop: true},
       beforeEnter: guardRoute
     }
