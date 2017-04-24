@@ -44,7 +44,7 @@ export default {
   computed: {
     ...mapGetters({
       topics: 'frontend/article/getArticleList',
-      category: 'frontend/category/getCategoryList',
+      category: 'global/category/getCategoryList',
       trending: 'frontend/article/getTrending'
     })
   },
@@ -54,7 +54,7 @@ export default {
     }
   },
   mounted() {
-    fetchInitalData(this.$store, {page: 1})
+    fetchInitialData(this.$store, {page: 1})
   },
   watch: {
     '$route'() {

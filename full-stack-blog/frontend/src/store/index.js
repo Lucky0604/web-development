@@ -21,6 +21,9 @@ import backendArticle from './modules/backend/backendArticle'
 import globalCategory from './modules/global/globalCategory'
 import globalComment from './modules/global/globalComment'
 
+// frontend modules
+import frontendArticle from './modules/frontend/frontendArticle'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -39,6 +42,12 @@ export default new Vuex.Store({
         admin: backendAdmin,
         user: backendUser,
         article: backendArticle
+      }
+    },
+    frontend: {
+      namespaced: true,
+      modules: {
+        article: frontendArticle
       }
     }
   }

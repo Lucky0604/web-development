@@ -9,17 +9,42 @@
 
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import Meta from 'vue-meta'
+import cookies from 'js-cookie'
+import {inBrowser} from '../utils'
+
+import index from '~pages/frontend/frontend-index.vue'
 
 Vue.use(Router)
+Vue.use(Meta)
 
-export default new Router({
+const scrollBehavior = to => {
+  const position = {} 
+  if (to.hash) {
+    position.selector = to.hash
+  }
+  if (to.matched.some(mm => mm.meta.scrollToTop)) {
+    position.x = 0
+    position.y = 0
+  }
+  return position
+}
+
+const guardRoute = (to, from, next) => {
+  var token = cookies.get('user') || !inBrowser
+  if (!token) {
+    next('/')
+  } else {
+    next()
+  }
+}
+
+
+const router = new Router({
+  mode: 'history',
+  scrollBehavior,
   routes: [
-    {
-      path: '/',
-      name: 'Hello',
-      component: Hello
-    }
+    {name: 'index', path: '/', component: index}
   ]
 })
 
