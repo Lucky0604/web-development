@@ -24,8 +24,8 @@
       </div>
       <div class="right-part">
         <span class="nav-search"><i class="icon icon-search-white"></i><input @keyup.enter="search($event)" placeholder="Remember click Enter" class="nav-search-input"></span>
-        <span v-if="isLogin" class="nav-me"><router-link to="/user/account" class="nav-me-link"><img src="//ww2.sinaimg.cn/large/005uQRNCgw1f4ij3d8m05j301s01smwx.jpg" alt="" class="nav-avatar-img"></router-link></span>
-        <span v-else class="nav-me"><a href="javascript:;" @click="login" class="nav-me-link"><img src="//ww2.sinaimg.cn/large/005uQRNCgw1f4ij3d8m05j301s01smwx.jpg" alt="" class="nav-avatar-img"></a></span>
+        <span v-if="isLogin" class="nav-me"><router-link to="/user/account" class="nav-me-link"><img src="http://tva1.sinaimg.cn/crop.0.0.180.180.180/bfc09297jw1e8qgp5bmzyj2050050aa8.jpg" alt="" class="nav-avatar-img"></router-link></span>
+        <span v-else class="nav-me"><a href="javascript:;" @click="login" class="nav-me-link"><img src="http://tva1.sinaimg.cn/crop.0.0.180.180.180/bfc09297jw1e8qgp5bmzyj2050050aa8.jpg" alt="" class="nav-avatar-img"></a></span>
       </div>
     </div>
   </nav>

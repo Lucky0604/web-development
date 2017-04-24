@@ -40,4 +40,36 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
+import trending from '~components/aside-trending.vue'
+
+const fetchInitialData = async store => {
+  await store.dispatch('frontend/article/getTrending')
+}
+
+export default {
+  name: 'frontend-index',
+  prefetch: fetchInitialData,
+  components: {
+    trending
+  },
+  computed: {
+    ...mapGetters({
+      trending: 'frontend/article/getTrending'
+    })
+  },
+  mounted() {
+    if (this.trending.length <= 0) {
+      fetchInitialData(this.$store)
+    } else {
+      this.$store.dispatch('global/gProgress', 100)
+    }
+  },
+  metaInfo() {
+    return {
+      title: 'About - Softteam',
+      meta: [{vmid: 'description', name: 'description', content: 'Softteam'}]
+    }
+  }
+}
 </script>

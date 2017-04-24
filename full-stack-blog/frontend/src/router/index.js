@@ -14,6 +14,7 @@ import cookies from 'js-cookie'
 import {inBrowser} from '../utils'
 
 import index from '~pages/frontend/frontend-index.vue'
+import about from '~pages/frontend/frontend-about.vue'
 
 Vue.use(Router)
 Vue.use(Meta)
@@ -44,7 +45,8 @@ const router = new Router({
   mode: 'history',
   scrollBehavior,
   routes: [
-    {name: 'index', path: '/', component: index}
+    {name: 'index', path: '/', component: index},
+    {name: 'about', path: '/about', component: about, meta: {scrollToTop: true}}
   ]
 })
 
