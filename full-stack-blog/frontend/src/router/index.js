@@ -17,6 +17,7 @@ import index from '~pages/frontend/frontend-index.vue'
 import about from '~pages/frontend/frontend-about.vue'
 import article from '~pages/frontend/frontend-article.vue'
 import account from '~pages/frontend/frontend-user-account.vue'
+import password from '~pages/frontend/frontend-user-password.vue'
 
 Vue.use(Router)
 Vue.use(Meta)
@@ -50,7 +51,11 @@ const router = new Router({
     {name: 'index', path: '/', component: index},
     {name: 'about', path: '/about', component: about, meta: {scrollToTop: true}},
     {name: 'article', path: '/article/:id', component: article, meta: {scrollToTop: true}},
-    {name: 'account', path: '/user/account', component: account, meta: {scrollToTop: true}, beforeEnter: guardRoute}
+    {name: 'account', path: '/user/account', component: account, meta: {scrollToTop: true}, beforeEnter: guardRoute},
+    {name: 'password', path: '/user/password', component: password, meta: {scrollToTop: true}, beforeEnter: guardRoute},
+    {name: 'trending', path: '/trending/:by', component: index},
+    {name: 'category', path: '/category/:id', component: index},
+    {name: 'search', path: '/search/:key', component: index}
   ]
 })
 

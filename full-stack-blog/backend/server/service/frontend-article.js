@@ -121,7 +121,7 @@ exports.getItem = async ctx => {
 }
 
 /**
- * 用户获取访问趋势
+ * 热门文章
  * @method getTrending
  * @param ctx
  * @return
