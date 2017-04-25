@@ -15,6 +15,7 @@ import {inBrowser} from '../utils'
 
 import index from '~pages/frontend/frontend-index.vue'
 import about from '~pages/frontend/frontend-about.vue'
+import article from '~pages/frontend/frontend-article.vue'
 
 Vue.use(Router)
 Vue.use(Meta)
@@ -46,7 +47,8 @@ const router = new Router({
   scrollBehavior,
   routes: [
     {name: 'index', path: '/', component: index},
-    {name: 'about', path: '/about', component: about, meta: {scrollToTop: true}}
+    {name: 'about', path: '/about', component: about, meta: {scrollToTop: true}},
+    {name: 'article', path: '/article/:id', component: article, meta: {scrollToTop: true}}
   ]
 })
 

@@ -34,3 +34,57 @@
   </div>
 </template>
 
+<script>
+  import {mapGetters} from 'vuex'
+  import actions from '~components/item-actions.vue'
+  import category from '~components/aside-category.vue'
+  import trending from '~components/aside-trending.vue'
+  import comment from '~components/frontend-comment.vue'
+
+  const fetchInitialData = async store => {
+    store.dispatch('global/category/getCategoryList')
+    store.dispatch('frontend/article/getTrending')
+    store.dispatch(`global/comment/getCommentList`, {page: 1, limit: 5})
+    await store.dispatch(`frontend/article/getArticleItem`)
+  }
+
+  export default {
+    name: 'frontend-article',
+    prefetch: fetchInitialData,
+    computed: {
+      ...mapGetters({
+        article: 'frontend/article/getArticleItem',
+        comments: 'global/comment/getCommentList',
+        category: 'global/category/getCategoryList',
+        trending: 'frontend/article/getTrending'
+      })
+    },
+    components: {
+      actions,
+      comment,
+      category,
+      trending
+    },
+    methods: {
+      addTarget(content) {
+        if (!content) return ''
+        return content.replace(/<a(.*?)href=/g, '<a$1target="_blank" href=')
+      }
+    },
+    mounted() {
+      fetchInitialData(this.$store)
+    },
+    watch: {
+      '$route'() {
+        fetchInitialData(this.$store)
+      }
+    },
+    metaInfo() {
+      const title = this.article.data.title ? this.article.data.title + ' - Softteam': 'Softteam'
+      return {
+        title,
+        meta: [{vmid: 'description', name: 'description', content: title}]
+      } 
+    }
+  }
+</script>
