@@ -9,7 +9,7 @@
 <script>
 import api from '~api'
 export default {
-  name: 'aside::account',
+  name: 'aside-account',
   serverCacheKey: () => {
     return `aside::account`
   },
