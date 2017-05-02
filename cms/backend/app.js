@@ -1,8 +1,8 @@
 /*
  * @Author: Lucky 
  * @Date: 2017-05-01 16:29:25 
- * @Last Modified by: Lucky
- * @Last Modified time: 2017-05-01 19:06:43
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2017-05-02 14:23:19
  */
 import express from 'express'
 import path from 'path'
@@ -81,8 +81,8 @@ const createUser = async () => {
 createUser()
 
 // routes
-app.use('/api/mobile/obj', routes.OBJ)
-app.use('/api/admin', routes.admin)
+app.use('/api/mobile/obj', routers.OBJ)
+app.use('/api/admin', routers.admin)
 models.connect()
 
 console.log('===================================')

@@ -21,3 +21,5 @@ router.route('/user/:id', authSession)
   .post(Admin.User.create)
   .put(Admin.User.update)
   .delete(Admin.User.delete)
+
+export default router

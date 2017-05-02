@@ -16,5 +16,6 @@ export default {
       }
       return mongoose.connection
     })
-  }
+  },
+  OBJ
 }

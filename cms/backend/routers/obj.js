@@ -19,3 +19,5 @@ const {OBJ} = api
 // users
 router.post('/user/login', OBJ.User.login)
 router.post('/user/verify', OBJ.User.verify)
+
+export default router
