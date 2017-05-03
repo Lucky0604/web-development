@@ -20,4 +20,16 @@ const {OBJ} = api
 router.post('/user/login', OBJ.User.login)
 router.post('/user/verify', OBJ.User.verify)
 
+// articles
+router.get('/articles', OBJ.Article.all)
+router.get('/article/:id', OBJ.Article.find)
+router.get('/articles/myArticles', OBJ.Article.myArticles)
+router.get('/articles/myComments', OBJ.Article.myComments)
+
+// votes
+router.get('/votes', OBJ.Vote.all)
+router.get('/vote/:id', OBJ.Vote.find)
+router.get('/votes/myVotes', OBJ.Vote.myVotes)
+router.get('/votes/myComments', OBJ.Vote.myComments)
+
 export default router

@@ -8,7 +8,13 @@
 
 
 import User from './user'
+import Article from './article'
+import Comment from './comment'
+import Vote from './vote'
 
 export default {
-  User
+  User,
+  Article,
+  Comment,
+  Vote
 }
