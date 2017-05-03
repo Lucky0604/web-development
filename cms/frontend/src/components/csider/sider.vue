@@ -4,7 +4,7 @@
       <router-link to="/">
         img src="http://ohusmobs2.bkt.clouddn.com/20170323149024023196292.png">
       </router-link>
-      <el-col>
+      <el-col :span="8">
         <el-menu class="el-menu-vertical-demo" :router="true" @open="handleOpen" @close="handleClose" theme="dark">
           <el-menu-item index="/">
             <i class="el-icon-menu"></i> | Dashboard
